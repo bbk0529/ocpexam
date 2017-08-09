@@ -1,0 +1,3349 @@
+Oracle 1z0-052
+Oracle Database 11g: Administration I
+Version: 7.0
+Topic 1, Volume A
+QUESTION NO: 1
+You notice that the performance of the database has degraded because of frequent checkpoints.
+Which two actions resolve the issue? (Choose two.)
+A. Disable automatic checkpoint tuning
+B. Check the size of the redo log file size and increase the size if it is small
+C. Set the FAST_START_MTTR_TARGET parameter as per the advice given by the MTTR
+Advisor
+D. Decrease the number of redo log members if there are more than one redo log members
+available in each redo log group
+Answer: B,C
+Explanation:
+QUESTION NO: 2
+Identify the memory component from which memory may be allocated for:
+Session memory for the shared serverBuffers for I/O slavesOracle Database Recovery Manager
+(RMAN) backup and restore operations
+A. Large Pool
+B. Redo Log Buffer
+C. Database Buffer Cache
+D. Program Global Area (PGA)
+Answer: A
+Explanation:
+QUESTION NO: 3
+You executed the following command to create a tablespace called SALES_DATA:
+SQL> CREATE TABLESPACE sales_data
+DATAFILE SIZE 100M
+SEGMENT SPACE MANAGEMENT AUTO;
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 2
+Which two statements are true about the SALES_DATA tablespace? (Choose two)
+A. The database automatically determines the extent-sizing policy for the tablespace.
+B. The segments are automatically shrunk when the contents are removed from them.
+C. The allocation of extents within the tablespace is managed through the dictionary tables.
+D. The space utilization description of the data blocks in segments is recorded in bitmap blocks.
+E. The space utilization description of the data blocks in segments is managed through free lists.
+Answer: A,D
+Explanation:
+QUESTION NO: 4
+In which of the scenario will the DBA perform recovery? (Choose all that apply.)
+A. The alert log file is corrupted
+B. A tablespace is accidentally dropped
+C. One of the redo log members is corrupted
+D. A database user terminates the session abnormally
+E. The hard disk on which the data files is stored is corrupted
+Answer: B,E
+Explanation:
+QUESTION NO: 5
+You want to enable archiving on your database. Presently, the database is running in
+NOARCHIVELOG mode.
+Given below are the steps to accomplish the task in random order:
+1. Shut down the instance.
+2. Execute the ALTER DATABASE ARCHIVELOG command.
+3. Start up the instance and mount the database.
+4. Set the DB_RECOVERY_FILE_DEST initialization parameter to $ORACLE_HOME/dest_1.
+5. Open the database.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 3
+Which is the correct sequence of steps for accomplishing the task?
+A. 4, 1, 3, 2, 5
+B. 1, 3, 4, 5, 2
+C. 1, 3, 2, 5; 4 not required
+D. 4, 1, 5, 2; 3 not required
+E. 1, 3, 4, 5; 2 not required
+Answer: C
+Explanation:
+QUESTION NO: 6
+You want to check the details of few errors that users have reported. You search for the alert log
+file and execute few commands to find the location of the alert log file.
+View the Exhibit and check the commands executed.
+What is the location of the alert_orcl.log file?
+A. ORACLE_HOME/dbs
+B. ORACEL_HOME/rdbms
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 4
+C. /u01/app/oracle/admin/orcl/adump
+D. /u01/app/oracle/flash_recovery_area
+E. ORACLE_BASE/diag/rdbms/orcl/alert
+F. ORACLE_BASE/diag/rdbms/orcl/orcl/trace
+Answer: F
+Explanation:
+QUESTION NO: 7
+See the Exhibit:
+Which statements are true regarding the USERS tablespace? (Choose all that apply.)
+A. A bitmap is used to record free extents
+B. Free extents information is managed within the tablespace
+C. Free extents information is managed in the SYSAUX tablespace
+D. The data dictionary tables are updated when extents are allocated or deallocated
+Answer: A,B
+Explanation:
+QUESTION NO: 8
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 5
+Examine the values for the following initialization parameters:
+FAST_START_MTTR_TARGET=0
+LOG_CHECKPOINT_INTERVAL=0
+Which two will be the implications of these values in your database? (Choose two.)
+A. The SGA advisor will be disabled
+B. The MTTR advisor will be disabled
+C. Automatic checkpoint tuning will be disabled
+D. Checkpoint information will not be written to the alert log file
+Answer: B,C
+Explanation:
+QUESTION NO: 9
+In your database instance, the STATISTICS_LEVEL initialization parameter is set to BASIC.
+What is the impact of this setting?
+A. Optimizer statistics are collected automatically.
+B. Only timed operating system (OS) statistics and plan execution statistics are collected.
+C. The snapshots for the Automatic Workload Repository (AWR) are not generated automatically.
+D. Snapshots cannot be collected manually by using the DBMS_WORKLOAD_REPOSITORY
+package.
+E. The Oracle server dynamically generates the necessary statistics on tables as part of query
+optimization.
+Answer: C
+Explanation:
+QUESTION NO: 10
+You have recently collected statistics on certain objects of a schema in your database. But you
+observe suboptimal execution plans for the queries on these objects after two days of statistics
+collection. The optimizer statistics retention period is set to its default value.
+Which action would help to use the previous set of statistics on the objects?
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 6
+A. Restore statistics from statistics history.
+B. Reduce the optimizer statistics retention period by 2 days.
+C. Set the OPTIMIZER_PENDING_STATISTICS parameter to TRUE.
+D. Reduce the Automatic Workload Repository (AWR) retention period by 2 days.
+Answer: A
+Explanation:
+QUESTION NO: 11
+Which three statements regarding the server parameter file (SPFILE) are true? (Choose three.)
+A. An SPFILE is a binary file
+B. An SPFILE cannot reside on a client
+C. An SPFILE cannot contain static parameters
+D. An SPFILE can store changes persistently across instance restarts
+E. An SPFILE can be read by the database server, but it is not written to by the server
+F. An SPFILE must be created manually, before creating a database, even if you use the
+Database Configuration Assistant (DBCA) to create the database
+Answer: A,B,D
+Explanation:
+QUESTION NO: 12
+Your test database is configured to run in NOARCHIVELOG mode. One of the data files in the
+USERS tablespace is lost due to a media failure. You notice that all the online redo logs have
+been overwritten since the last backup.
+What would you do to recover the data file?
+A. Take the USERS tablespace offline and re-create the lost data file
+B. Shutdown the instance, restore the data file from the last consistent backup and restart the
+database instance
+C. Shutdown the instance, restores all the database files from the last consistent backup and
+restart the database instance
+D. Take the USERS tablespace offline, restore all the data files of the USERS tablespace from the
+last consistent backup and make the tablespace online
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 7
+QUESTION NO: 13
+Examine the command:
+SQL>DBMS_STATS.SET_TABLE_PREFS('SH','CUSTOMERS','PUBLISH','false');
+Which statement describes the effect of the above command?
+A. Automatic statistics collection is stopped for the CUSTOMERS table
+B. Statistics for the CUSTOMERS table are locked and cannot be overwritten
+C. Existing statistics for the CUSTOMERS table become unusable for the query optimizer
+D. Subsequently, statistics gathered on the CUSTOMERS table are stored as pending statistics
+Answer: D
+Explanation:
+QUESTION NO: 14
+The instance abnormally terminates because of a power outage.
+Which statement is true about redo log files during instance recovery?
+A. Inactive and current redo log files are required to accomplish recovery
+B. Online and archived redo files are required to accomplish instance recovery
+C. All redo log entries after the last checkpoint are applied from redo log files to data files
+D. All redo log entries recorded in the current log file until the checkpoint position are applied to
+data files
+Answer: C
+Explanation:
+QUESTION NO: 15
+Examine the command:
+SQL>ALTER USR skd ACCOUNT LOCK;
+Which two statements are true after the command is executed? (Choose two.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 8
+A. The SKD user cannot log in to the database instance
+B. The objects owned by the SKD user are not accessible to any user
+C. The other users can access the objects owned by the SKD user, on which they have access
+D. The password for the SKD user expires and the user is forced to change the password at the
+next log in
+Answer: A,C
+Explanation:
+QUESTION NO: 16
+For which database operation would you need the database to be in the MOUNT state?
+A. Renaming the control files
+B. Re-creating the control files
+C. Dropping a user in your database
+D. Dropping a tablespace in your database
+E. Configuring the database instance to operate in the ARCHIVELOG or NOARCHIVELOG modes
+Answer: E
+Explanation:
+QUESTION NO: 17
+The job to gather optimizer statistics for objects runs as part of the automatic maintenance window
+in your database instance. At a certain point of time, the maintenance window closes before the
+statistics are gathered for all objects.
+Which statement is true in this scenario?
+A. The statistics collection continues until all objects are processed.
+B. The job is terminated and the statistics collected are restored to a time before the job started.
+C. This produces an error and the statistics collected are locked until the next time that the
+maintenance window is opened.
+D. The job is terminated and the statistics for the remaining objects are collected the next time that
+the maintenance window is opened.
+Answer: D
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 9
+QUESTION NO: 18
+You want to move all objects of the APPS user in the test database to the DB_USR schema of the
+production database. Which option of IMPDP would you use to accomplish this task?
+A. FULL
+B. SCHEMAS
+C. TRANSFORM
+D. REMAP_SCHEMA
+E. REMAP_TABLESPACE
+Answer: D
+Explanation:
+QUESTION NO: 19
+You executed the following command to create a password file in the database server:
+$ orapwd file = orapworcl entries = 5 ignorecase=N
+Which statement describes the purpose of the above password file?
+A. It records usernames and passwords of users when granted the DBA role
+B. It contains usernames and passwords of users for whom auditing is enabled
+C. It is used by Oracle to authenticate users for remote database administrator
+D. It records usernames and passwords of all users when they are added to OSDBA or OSOPER
+operating groups
+Answer: C
+Explanation:
+QUESTION NO: 20
+SQL> CREATE BIGFILE TABLESPACE MRKT
+2 DATAFILE '/u01/app/oracle/oradata/orcl/mrkt.dbf' size 10M LOGGING
+3 EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO;
+Tablespace created.
+SQL> ALTER DATABASE DEFAULT TABLESPACE MRKT;
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 10
+Database altered.
+Which two statements are true regarding the MRKT tablespace? (Choose two.)
+A. No more data files can be added to the tablespace.
+B. Segment space is managed by free lists in the tablespace.
+C. A user created without being assigned a default tablespace uses this tablespace.
+D. The tablespace can be dropped with the current setting with segments present in it.
+Answer: A,C
+Explanation:
+QUESTION NO: 21
+View the Exhibit and examine the privileges granted to the MGR_ROLE role.
+The user SKD has been granted the CONNECT and RESOURCE roles only. The database
+administrator (DBA) grants MGR_ROLE to the user SKD by executing the command:
+SQL> GRANT MGR_ROLE TO SKD WITH ADMIN OPTION;
+Which statement is true about the user SKD after he/she is granted this role?
+Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 11
+A. The user SKD can grant only the MGR_ROLE role to other users, but not the privileges in it
+B. The user SKD can revoke the MGR_ROLE only from the users for whom he/she is the grantor
+C. The user SKD can grant the privileges in the MGR_ROLE role to other users but not with
+ADMIN OPTION
+D. The user SKD can grant the privileges in the MGR_ROLE role to other users, but cannot
+revoke privileges from them
+Answer: A
+Explanation:
+QUESTION NO: 22
+After performing a clean shut down of the database instance for maintenance, you mount the
+database and then execute a command to open the database:
+SQL> ALTER DATABASE OPEN;
+Which two statements are true? (Choose two.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 12
+A. The online redo log files and online data files are opened
+B. All the online data files headers are checked for consistency
+C. Instance recovery is performed before opening the database
+D. The path and existence of all the log file members are checked
+Answer: A,B
+Explanation:
+QUESTION NO: 23
+Examine the command that is used to create a table:
+SQL> CREATE TABLE orders (
+oid NUMBER(6) PRIMARY KEY,
+odate DATE,
+ccode NUMBER (6),
+oamt NUMBER(10,2)
+) TABLESPACE users;
+Which two statements are true about the effect of the above command? (Choose two.)
+A. A CHECK constraint is created on the OID column.
+B. A NOT NULL constraint is created on the OID column.
+C. The ORDERS table is the only object created in the USERS tablespace.
+D. The ORDERS table and a unique index are created in the USERS tablespace.
+E. The ORDERS table is created in the USERS tablespace and a unique index is created on the
+OID column in the SYSTEM tablespace.
+Answer: B,D
+Explanation:
+QUESTION NO: 24
+Which two statements are true about Shared SQL Area and Private SQL Area? (Choose two.)
+A. Shared SQL Area will be allocated in the shared pool
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 13
+B. Shared SQL Area will be allocated when a session starts
+C. Shared SQL Area will be allocated in the large pool always
+D. The whole of Private SQL Area will be allocated in the Program Global Area (PGA) always
+E. Shared SQL Area and Private SQL Area will be allocated in the PGA or large pool
+F. The number of Private SQL Area allocations is dependent on the OPEN_CURSORS parameter
+Answer: A,F
+Explanation:
+QUESTION NO: 25
+Which three statements are correct about temporary tables? (Choose three.)
+A. Indexes and views can be created on temporary tables
+B. Both the data and structure of temporary tables can be exported
+C. Temporary tables are always created in a user's temporary tablespace
+D. The data inserted into a temporary table in a session is available to other sessions
+E. Data Manipulation Language (DML) locks are never acquired on the data of temporary tables
+Answer: A,C,E
+Explanation:
+QUESTION NO: 26
+Which two kinds of failures make the Data Recovery Advisor (DRA) generate a manual checklist?
+(Choose two.)
+A. Failure when no standby database is configured
+B. Failure because a data file is renamed accidentally
+C. Failure that requires no archive logs to be applied for recovery
+D. Failure due to loss of connectivity-for example, an unplugged disk cable
+Answer: B,D
+Explanation:
+Advising on Repair
+On the "View and Manage Failures" page, the Data Recovery Advisor generates a manual
+checklist after you click the Advise button. Two types of failures can appear.
+? Failures that require human intervention: An example is a connectivity failure when a disk cable
+is not plugged in.
+? Failures that are repaired faster if you can undo a previous erroneous action: For example, if you
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 14
+renamed a data file by error, it is faster to rename it back to its previous name than to initiate
+RMAN restoration from backup.
+You can initiate the following actions:
+? Click "Re-assess Failures" after you perform a manual repair. Resolved failures are implicitly
+closed; any remaining failures are displayed on the "View and Manage Failures" page.
+? Click "Continue with Advise" to initiate an automated repair. When the Data Recovery Advisor
+generates an automated repair option, it generates a script that shows how RMAN plans to repair
+the failure. Click Continue if you want to execute the automated repair. If you do not want the Data
+Recovery Advisor to automatically repair the failure, you can use this script as a starting point for
+your manual repair.
+QUESTION NO: 27
+Which two statements correctly describe the relation between a data file and the logical database
+structures? (Choose two)
+A. An extent cannot spread across data files.
+B. A segment cannot spread across data files.
+C. A data file can belong to only one tablespace.
+D. A data file can have only one segment created in it.
+E. A data block can spread across multiple data files as it can consist of multiple operating system
+(OS) blocks.
+Answer: A,C
+Explanation:
+QUESTION NO: 28
+Which two statements are true regarding a tablespace? (Choose two.)
+A. It can span multiple databases
+B. It can consist of multiple data files
+C. It can contain blocks of different files
+D. It can contains segments of different sizes
+E. It can contains a part of nonpartitioned segment
+Answer: B,D
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 15
+Explanation:
+QUESTION NO: 29
+Which two statements are true regarding Oracle Data Pump? (Choose two.)
+A. EXPDP and IMPDP are the client components of Oracle Data Pump
+B. DBMS_DATAPUMP PL/SQL packages can be used indedendently of the DATA Pump clients
+C. Oracle Data Pump export and import operations can be performed only by users with the
+SYSDBA privilege
+D. Oracle Data Pump imports can be done from the export files generated in the Original Export
+Release 9.x
+E. EXPDP and IMPDP use the procedures provided by DBMS_METADATA to execute export and
+import commands
+Answer: A,B
+Explanation:
+QUESTION NO: 30
+Identify the two situations in which the alert log file is updated with details. (Choose two.)
+A. Running a query on a table returns "ORA-600: Internal Error"
+B. Inserting a value in a table returns "ORA-01722: Invalid Number"
+C. Creating a table returns "ORA-00955: name is already used by an existing object'
+D. Inserting a value in a table returns "ORA-00001: unique constraint (SYS.PK_TECHP) violated."
+E. Rebuilding an index using ALTER INDEX ... REBUILD fails with an error "ORA-01578:
+ORACLE data block corrupted (file # 14, block @ 50)."
+F. Rebuilding an index using ALTER INDEX .... REBUILD fails with an error "ORA-01578:
+ORACLE data block corrupted (file #14, block #50)."
+Answer: A,E
+Explanation:
+QUESTION NO: 31
+Which two statements are true about alerts? (Choose two.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 16
+A. Clearing an alert sends the alert to the alert history
+B. Response actions cannot be specified with server-generated alerts
+C. The nonthreshold alerts appear in the DBA_OUTSTANDING_ALERTS view
+D. Server-generated alerts notify the problems that cannot be resolved automatically and require
+administrators to be notified
+Answer: A,D
+Explanation:
+QUESTION NO: 32
+Examine the following steps performed on a database instance:
+1. The DBA grants the CREATE TABLE system privilege to the SKD user with ADMIN OPTION
+2. The SKD user creates a table
+3. The SKD user grants the CREATE TABLE system privilege to the HR user
+4. The HR user creates a table
+5. The DBA revokes the CREATE TABLE system privilege from SKD
+Which statement is true after step 5 is performed?
+A. The table created by SKD is not accessible and SKD cannot create new tables
+B. The tables created by SKD and HR remain, but both cannot create new tables
+C. The table created by HR remains and HR still has the CREATE TABLE system privilege
+D. The table created by HR remains and HR can grant the CREATE TABLE system privilege to
+other users
+Answer: C
+Explanation:
+QUESTION NO: 33
+You execute this command to drop the ITEM table, which has the primary key referred in the
+ORDERS table:
+SQL> DROP TABLE scott.item CASCADE CONSTRAINTS PURGE;
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 17
+Which two statements are true about the effect of the command? (Choose two.)
+A. No flashback is possible to bring back the ITEM table.
+B. The ORDERS table is dropped along with the ITEM table.
+C. The dependent referential integrity constraints in the ORDERS table are disabled.
+D. The dependent referential integrity constraints in the ORDERS table are removed.
+E. The table definition of the ITEM table and associated indexes are placed in the recycle bin.
+Answer: A,D
+Explanation:
+QUESTION NO: 34
+View the Exhibit and examine the privileges granted to the SL_REP user.
+The EMP table is owned by the SCOTT user. The SL_REP user executes the following command:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 18
+SQL> GRANT SELECT ON scott.emp TO hr;
+Which statement describes the outcome of the command?
+A. The command executes successfully
+B. The command produces an error because the EMP table is owned by SCOTT
+C. The command produces an error because SL_REP has the GRANT ANY OBJECT PRIVILEGE
+without ADMIN_OPTION
+D. The command produces an error because SL_REP does not have the SELECT privilege with
+GRANT_OPTION on the EMP table
+Answer: A
+Explanation:
+QUESTION NO: 35
+You executed this command to create a temporary table:
+SQL> CREATE GLOBAL TEMPORARY TABLE report_work_area (
+startdate DATE,
+enddate DATE,
+class CHAR(20)
+) ON COMMIT PRESERVE ROWS;
+Which statement is true about the rows inserted into the REPORT_WORK_AREA table during a
+transaction?
+A. The rows stay in the table only until session termination
+B. The rows stay in the table only until the next transaction starts on the table
+C. The rows are visible to all current sessions after the transaction in committed
+D. The rows stay available for subsequent sessions after the transaction is committed
+Answer: A
+Explanation:
+QUESTION NO: 36
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 19
+You want to access employee details contained in flat files as part of the EMPLOYEE table. You
+plan to add a new column to the EMPLOYEE table to achieve this.
+Which data types would you use for the new column?
+A. CLOB
+B. BLOB
+C. BFILE
+D. LONG RAW
+Answer: C
+Explanation:
+QUESTION NO: 37
+The HR user creates a stand-alone procedure as follows and grants the EXECUTE privilege on
+the procedure to many database users:
+CREATE OR REPLACE PROCEDURE create_dept ( v_deptno NUMBER, v_dname VARCHAR2,
+v_mgr NUMBER, v_loc NUMBER)
+BEGIN
+INSERT INTO hr.departments VALUES (v_deptno, v_dname, v_mgr, v_loc);
+END;
+The users having permission to execute the procedure are able to insert records into the
+DEPARTMENTS table even though they do not have the INSERT privilege on the table. You want
+only those users who have privileges on the DEPARTMENTS table to be able to execute the
+procedure successfully.
+What would you suggest to the PL/SQL developers to achieve this?
+A. Create the procedure with definer's right.
+B. Create the procedure with invoker's right.
+C. Grant the EXECUTE privilege with GRANT OPTION on the procedure to selected users.
+D. Create the procedure as part of a PL/SQL package and grant the EXECUTE privilege on the
+package to selected users.
+Answer: B
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 20
+QUESTION NO: 38
+Examine the following command that is used to create a table:
+Which two statements are true about the effect of the above command? (Choose two.)
+A. A CHECK constraint is created on the OID column
+B. A NOT NULL constraint is created on the OID column
+C. The ORDERS table is the only object created in the USERS tablespace
+D. The ORDERS table and a unique index are created in the USERS tablespace
+E. The ORDERS table is created in the USERS tablepsace and a unique index is created on the
+OID column in the SYSTEM tablespace
+Answer: B,D
+Explanation:
+QUESTION NO: 39
+View the Exhibit to examine the details for an incident.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 21
+Which statement is true regarding the status of the incident?
+A. The DBA is working on the incident and prefers that the incident be kept in the ADR
+B. The incident is now in the Done state and the ADR can select the incident to be purged
+C. The incident has been newly created and is in the process of collecting diagnostic information
+D. The data collection for the incident is complete and the incident can be packaged and sent to
+Oracle Support
+Answer: D
+Explanation:
+QUESTION NO: 40
+What can you achieve by implementing reverse key index?
+A. Reverse the bytes of each column indexed including the row ID
+B. Store a bitmap for each key value instead of a list of row IDs in the leaf node
+C. Prevent contention on the highest leaf block when using sequences to generate keys
+D. Remove repeated key values from the index to fit more index entries in a given amount of disk
+space
+Answer: C
+Explanation:
+QUESTION NO: 41
+SQL> AUDIT DROP ANY TABLE BY scott BY SESSION WHENEVER SUCCESSFUL;
+What is the effect of this command?
+A. One audit record is created for every successful DROP TABLE command executed in the
+session of SCOTT
+B. One audit record is generated for the session when SCOTT grants the DROP ANY TABLE
+privilege to other users
+C. One audit record is created for the whole session if user SCOTT successfully drops one or
+more tables in his session
+D. One audit record is created for every session of any other user in which a table owned by
+SCOTT is dropped successfully
+E. One audit record is created for every successful DROP TABLE command executed by any user
+to drop tables owned by SCOTT
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 22
+Answer: C
+Explanation:
+QUESTION NO: 42
+You executed the following command to perform a backup of the USERS tablespace:
+SQL> ALTER TABLESPACE users BEGIN BACKUP;
+ALTER TABLESPACE users BEGIN BACKUP
+*
+ERROR at line 1:
+ORA-01123: cannot start online backup; media recovery not enabled
+What could be the reason for this error?
+A. The MTTR Advisor is disabled.
+B. The database is in NOARCHIVELOG mode.
+C. The tablespace is already in backup mode.
+D. The Flash Recovery Area is not configured.
+Answer: B
+Explanation:
+QUESTION NO: 43
+Which statements listed below describe the data dictionary views?
+1. These are stored in the SYSTEM tablespace
+2. These are the based on the virtual tables
+3. These are owned by the SYS user
+4. These can be queried by a normal user only if O7_DICTIONARY_ACCESSIBLILITY parameter
+is set to TRUE
+5. The V$FIXED_TABLE view can be queried to list the names of these views
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 23
+A. 1 and 3
+B. 2,3 and 5
+C. 1,2, and 5
+D. 2,3,4 and 5
+Answer: A
+Explanation:
+QUESTION NO: 44
+View the Exhibit to examine the error that occurred during the database startup.
+You opened an RMAN session for the database. To repair the failure, you executed the following
+command as the first RMAN command:
+RMAN> REPAIR FAILURE;
+Which statement describes the consequence of this command?
+A. The command performs the recovery and closes the failure
+B. The command only displays the advice and the RMAN script required for recovery
+C. The command executes the RMAN script to repair the failure and remove the entry from the
+Automatic
+Diagnostic Repository (ADR)
+D. The command produces an error because the ADVISE FAILURE command was not executed
+before the REPAIR FAILURE command
+Answer: D
+Explanation:
+QUESTION NO: 45
+You execute this command to drop the ITEM table, which has the primary key referred in the
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 24
+ORDERS table:
+SQL> DROP TABLE scott.item CASCADE CONSTRAINTS PURGE;
+Which two statements are true about the effect of the command? (Choose two.)
+A. No flashback is possible to bring back the ITEM table
+B. The ORDERS table is dropped along with the ITEM table
+C. The dependent referential integrity constraints in the ORDERS table are disabled
+D. The dependent referential integrity constraints in the ORDERS table are removed
+E. The table definition of the ITEM table and associated indexes are placed in the recycle bin
+Answer: A,D
+Explanation:
+QUESTION NO: 46
+You plan to move data from a flat file to a table in your database. You decide to use SQL*Loader
+direct path load method to perform this task. The table in which you plan to load data in an
+important table having various integrity constraint defined on it.
+Which constraints will remain enabled by default during this operation? (Choose all that apply.)
+A. CHECK
+B. UNIQUE
+C. NOT NULL
+D. PRIMARY KEY
+E. FOREIGN KEY
+Answer: B,C,D
+Explanation:
+QUESTION NO: 47
+SQL> AUDIT DROP ANY TABLE BY scott BY SESSION WHENEVER SUCCESSFUL;
+What is the effect of this command?
+A. One audit record is created for every successful DROP TABLE command executed in the
+session of SCOTT
+B. One audit record is generated for the session when SCOTT grants the DROP ANY TABLE
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 25
+privilege to other users
+C. One audit record is created for the whole session if user SCOTT successfully drops one or
+more tables in his session
+D. One audit record is created for every session of any other user in which a table owned by
+SCOTT is dropped successfully
+E. One audit record is created for every successful DROP TABLE command executed by any user
+to drop tables owned by SCOTT
+Answer: C
+Explanation:
+QUESTION NO: 48
+User A executes the following command to drop a large table in your database:
+SQL> DROP TABLE trans;
+While the drop table operation is in progress; user B executes the following command on the same
+table;
+SQL> DELETE FROM trans WHERE tr_type='SL';
+Which statement is true regarding the DELETE command?
+A. It fails to delete the records because the records are locked in the SHARE mode
+B. It deletes the rows successfully because the table is locked in the SHARE mod
+C. It fails to delete the records because the table is locked in EXCLUSIVE mode
+D. It deletes the rows successfully because the table is locked in SHARE ROW EXCLUSIVE mode
+Answer: C
+Explanation:
+QUESTION NO: 49
+In which situation may the UNDO_RETENTION parameter be ignored, even if it is set to a value?
+A. When the data file of the undo tablespace is autoextensible
+B. When there are more than one undo tablespace available in the database
+C. When the undo tablespace is of a fixed size and retention guarantee is not enabled
+D. When the undo tablespace is autoextensible and retention guarantee is not enabled
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 26
+Answer: C
+Explanation:
+QUESTION NO: 50
+You perform differential incremental level 1 backups of your database on each working day and
+level 0 backup on Sunday to tape:
+Which two statements are true about differential incremental backups? (Choose two.)
+A. The backup performed on Sundays contains all the blocks that have ever been used in the
+database
+B. The backup performed on Sundays contains all the blocks that have changed since the last
+level 1 backup
+C. The backup performed on each working day contains all the blocks that have changed since
+the last level 0 backup
+D. The backup performed on Monday contains all the blocks that have changed since the level 0
+backup and every other working day contains all the blocks that have changed since the level 1
+backup
+Answer: A,D
+Explanation:
+QUESTION NO: 51
+Your database is open and the LISTENER listener is running. The new DBA of the system stops
+the listener by using the command: LSNRCTL> STOP
+What happens to the sessions that are presently connected to the database instance?
+A. The sessions are able to perform only queries
+B. The sessions are not affected and continue to function normally
+C. The sessions are terminated and the active transactions are rolled back
+D. The sessions are not allowed to perform any operations till the listener is started
+Answer: B
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 27
+QUESTION NO: 52
+The database instance has the following parameter setting:
+OS_AUTHENT_PREFIX = OPS$
+OS_ROLES = FALSE
+REMOTE_OS_AUTHENT = FALSE
+REMOTE_OS_ROLES = FALSE
+TIMED_OS_STATISTICS = 0
+You have a local operating system user SKD. You create a database user OPS$SKD, and then
+assign external authentication. The user OPS$SKD has the CREATE SESSION privilege.
+What would you achieve by the above process?
+A. The database user OPS$SKD will be able to administer the database.
+B. The authentication detail for the database user OPS$SKD is recorded in the password file.
+C. The local operating system user SKD will be able to access the database instance without
+specifying the username and password.
+D. The database user OPS$SKD has to login with the password of the local operating system user
+SKD to access the database instance.
+Answer: C
+Explanation:
+QUESTION NO: 53
+Your database instance is running with full workload after database creation. You have decided to
+use a fixedsize undo tablespace. You want to use the undo Advisor to estimate the capacity of the
+undo tablespace.
+Which two factors must you consider before using the Undo Advisor to estimate the capacity of the
+undo tablespace? (Choose two.)
+A. The retention period to support flashback
+B. The expected length of the longest-running query
+C. The number of undo tablespaces in the database
+D. The size of the Flash Recovery Area for the database instance
+Answer: A,B
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 28
+Explanation:
+QUESTION NO: 54
+The instance abnormally terminates because of a power outage.
+Which statement is true about redo log files during instance recovery?
+A. Inactive and current redo log files are required to accomplish recovery
+B. Online and archived redo files are required to accomplish instance recovery
+C. All redo log entries after the last checkpoint are applied from redo log files to data files
+D. All redo log entries recorded in the current log file until the checkpoint position are applied to
+data files
+Answer: C
+Explanation:
+QUESTION NO: 55
+Note the following points describing various utilities in Oracle Database 11g:
+1. It enables the high-speed transfer of data from one database to another
+2. It provides a complete solution for the backup, restoration and recovery needs of the entire
+database
+3. It enables the loading of data from an external file into table of an Oracle Database
+4. It provides a tape backup management for the Oracle ecosystem
+Which point describes Oracle Secure Backup?
+A. 1
+B. 2
+C. 3
+D. 4
+E. 1,2 and 4
+F. 1,2,3, and 4
+Answer: D
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 29
+QUESTION NO: 56
+Examine the values for the following initialization parameters:
+FAST_START_MTTR_TARGET=0
+LOG_CHECKPOINT_INTERVAL=0
+Which two will be the implications of these values in your database? (Choose two.)
+A. The SGA advisor will be disabled
+B. The MTTR advisor will be disabled
+C. Automatic checkpoint tuning will be disabled
+D. Checkpoint information will not be written to the alert log file
+Answer: B,C
+Explanation:
+QUESTION NO: 57
+You have an ORDERS table with the following structure:
+The table has data in the ODATE column for all rows. Many orders are placed in a single day. You
+need to ensure that the ODATE column must contain data for every order in future.
+Which method would serve the purpose?
+A. Modify the column using the ALTER TABLE ... MODIFY command.
+B. Add a UNIQUE constraint to the column using the ALTER TABLE ... ADD CONSTRAINT
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 30
+command.
+C. Add a NOT NULL constraint to the column using the ALTER TABLE ... ADD CONSTRAINT
+command.
+D. Add a PRIMARY KEY constraint to the column using the ALTER TABLE ... ADD CONSTRAINT
+command.
+Answer: A
+Explanation:
+QUESTION NO: 58
+Identify two situations in which you can use Data Recovery Advisor for recovery. (Choose two.)
+A. The database files are corrupted when the database is open
+B. The user has dropped an important table that needs to be recovered
+C. The archived redo log files are missing for which the backup is not available
+D. The database is not opening because the required database files are missing
+Answer: A,D
+Explanation:
+QUESTION NO: 59
+You have two tables with referential integrity enforced between them. You need to insert data to
+the child table first because it is going to be a long transaction and data for the parent table will be
+available in a later stage, which can be inserted as part of the same transaction.
+View the Exhibit to examine the commands used to create tables.
+Which action would you take to delay the referential integrity checking until the end of the
+transaction?
+Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 31
+A. Set the constraint to deferred before starting the transaction
+B. Alter the constraint to NOVALIDATE state before starting the transaction
+C. Enable the resumable mode for the session before starting the transaction
+D. Set the COMMIT_WAIT parameter to FORCE_WAIT for the session before starting the
+transaction
+Answer: A
+Explanation:
+Specifying Constraint State
+As part of constraint definition, you can specify how and when Oracle should enforce the
+constraint.
+constraint_state You can use the constraint_state with both inline and out-of-line specification. You
+can specify the clauses of constraint_state in any order, but you can specify each clause only
+once.
+DEFERRABLE Clause The DEFERRABLE and NOT DEFERRABLE parameters indicate whether
+or not, in subsequent transactions, constraint checking can be deferred until the end of the
+transaction using the SET CONSTRAINT(S) statement. If you omit this clause, then the default is
+NOT DEFERRABLE.
+Specify NOT DEFERRABLE to indicate that in subsequent transactions you cannot use the SET
+CONSTRAINT[S] clause to defer checking of this constraint until the transaction is committed. The
+checking of a NOT DEFERRABLE constraint can never be deferred to the end of the transaction.
+If you declare a new constraint NOT DEFERRABLE, then it must be valid at the time the CREATE
+TABLE or ALTER TABLE statement is committed or the statement will fail.
+Specify DEFERRABLE to indicate that in subsequent transactions you can use the SET
+CONSTRAINT[S] clause to defer checking of this constraint until after the transaction is
+committed. This setting in effect lets you disable the constraint temporarily while making changes
+to the database that might violate the constraint until all the changes are complete.
+You cannot alter the deferability of a constraint. That is, whether you specify either of these
+parameters, or make the constraint NOT DEFERRABLE implicitly by specifying neither of them,
+you cannot specify this clause in an ALTER TABLE statement. You must drop the constraint and
+re-create it.
+QUESTION NO: 60
+You have statistics collected for some selected tables. Your requirement is that the statistics for
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 32
+the tables and all dependent indexes must not be overwritten by further statistics collection until a
+certain point of time. How would you achieve this?
+A. Lock statistics for the tables.
+B. Change STALE_PERCENT to zero for the tables.
+C. Set the TIMED_STATISTICS parameter to TRUE.
+D. Set the STATISTICS_LEVEL parameter to BASIC.
+E. Set the OPTIMIZER_USE_PENDING parameter statistics to TRUE.
+Answer: A
+Explanation:
+Statistics are collections of data that provide more details about the database and the objects in it.
+Optimizer statistics are used by the query optimizer to choose the best execution plan for each
+SQL statement. Database statistics provide information for performance monitoring.
+QUESTION NO: 61
+Automatic Shared Memory Management is disabled for your database instance. You realize that
+there are cases of SQL statements performing poorly because of repeated parsing activity,
+resulting in degradation of performance.
+What would be your next step to improve performance?
+A. Run the SQL Access Advisor
+B. Run the memory Advisor for the SGA
+C. Run the memory Advisor for the PGA
+D. Run the memory advisor for the shared pool
+E. Run the memory advisor for the buffer cache
+Answer: D
+Explanation:
+Using the Memory Advisor through OEM
+The Memory Advisor can be used only when the automatic memory management (AMM) feature
+is disabled. The Memory Advisor has three advisors that give recommendations on: the Shared
+Pool in the SGA, the Buffer Cache in the SGA, and the PGA.
+QUESTION NO: 62
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 33
+View the Exhibit and examine the parameters. User A executes the following command to update
+the TRANS table:
+SQL> UPDATE B.trans SET tr_amt=tr_amt+500 WHERE c_code='C005';
+Before user A issues a COMMIT or ROLLBACK command, user B executes the following
+command on the TRANS table:
+SQL> ALTER TABLE trans MODIFY (tr_type VARCHAR2(3));
+What would happen in this scenario?
+Exhibit:
+A. The ALTER TABLE command modifies the column successfully
+B. The DDL operation gets higher priority and transaction for user A is rolled back
+C. The ALETER TABLE command waits indefinitely until user A ends the transaction
+D. The ALTER TABLE command fails after waiting for 60 seconds due to the resource being busy
+Answer: D
+Explanation:
+QUESTION NO: 63
+Which two files in the database can be configured for automatic backups by using the autobackup
+feature in Recovery Manager (RMAN)? (Choose two.)
+A. Data Files
+B. Control Files
+C. Parameter Files
+D. Online Redo Log Files
+E. Server Parameter File
+Answer: B,E
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 34
+QUESTION NO: 64
+Which two statements are true regarding the usage of the SQL*LOADER utility? (Choose two.)
+A. You can load data into multiple tables during the same load session
+B. You can load data from multiple files to a table during the same load session
+C. You cannot perform selective data loading based on the values available in the records
+D. You can use an export file generated by the EXPDP utility as an input data file to load the data
+E. You can load data only if the input file is available on the disk and tape but not a named pipes
+Answer: A,B
+Explanation:
+QUESTION NO: 65
+In which situation may the UNDO_RETENTION parameter be ignored, even if it is set to a value?
+A. When the data file of the undo tablespace is autoextensible
+B. When there are more than one undo tablespace available in the database
+C. When the undo tablespace is of a fixed size and retention guarantee is not enabled
+D. When the undo tablespace is autoextensible and retention guarantee is not enabled
+Answer: C
+Explanation:
+QUESTION NO: 66
+Note the following structures in your database server:
+1. Extents
+2. OS Blocks
+3. Tablespace
+4. Segments
+5. Oracle Data Block
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 35
+Which option has the correct arrangement of these structures from the smallest to the largest?
+A. 2, 5, 1, 4, 3
+B. 1, 2, 3, 4, 5
+C. 5, 2, 1, 3, 4
+D. 2, 1, 5, 4, 3
+Answer: A
+Explanation:
+QUESTION NO: 67
+You want to access employee details contained in flat files as part of the EMPLOYEE table. You
+plan to add a new column to the EMPLOYEE table to achieve this.
+Which data types would you use for the new column?
+A. CLOB
+B. BLOB
+C. BFILE
+D. LONG RAW
+Answer: C
+Explanation:
+QUESTION NO: 68
+You are managing an Oracle Database 11g database with the following backup strategy:
+1. On Sunday, an incremental level 0 tape backup is performed
+2. Monday through Saturday, a cumulative incremental level 1 tape backup is performed
+Which two statements are true regarding the backups performed? (Choose two.)
+A. The backup performed in step 1 backs up all blocks that have ever been in use in the database
+B. The backup performed in step 2 copies all the blocks changed since the most recent level 0
+backup
+C. The backup performed in step 1 backs up all the blocks changed since the most recent level 1
+backup
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 36
+D. The backup performed in step 2 backs up all blocks that have changed since the most recent
+incremental backup at level 1
+Answer: A,B
+Explanation:
+backup-level
+Description
+The backup-level placeholder specifies the level of a backup created with the backup command.
+Syntax
+backup-level::=
+full | incr_level | incr | offsite
+incr_level::=
+1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+Semantics
+full
+Specifies that Oracle Secure Backup should back up all files defined in a dataset regardless of
+when they were last backed up. This option is equivalent to level 0. This is the default value.
+incr_level
+Specifies an incremental level from 1 to 9 and backs up only those files that have changed since
+the last backup at a lower level.
+incr
+Specifies that Oracle Secure Backup should back up any file that has been modified since the last
+incremental backup at the same level or lower. The incr option is equivalent to level 10. This level
+is platform dependent and is incompatible with some client operating systems such as the Netapp
+filer's Data ONTAP.
+offsite
+Equivalent to a full (level 0) backup except that Oracle Secure Backup keeps a record of this
+backup in such a way that it does not affect the full or incremental backup schedule. This option is
+useful when you want to create a backup image for offsite storage without disturbing your
+schedule of incremental backups.
+QUESTION NO: 69
+View the Exhibit and examine the attributes of an undo tablespace. In an OLTP system, the user
+SCOTT has started a query on a large table in the peak transactional hour that performs bulk
+inserts. The query runs for more than 15 minutes and then SCOTT receives the following error:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 37
+ORA-01555: snapshot too old What could be the reason for this error?
+Exhibit:
+A. The query is unable to get a read-consistent image.
+B. There is not enough space in Flash Recovery Area.
+C. There is not enough free space in the flashback archive.
+D. The query is unable to place data blocks in undo tablespace.
+Answer: A
+Explanation:
+QUESTION NO: 70
+Which two operations can be performed on an external table? (Choose two.)
+A. Create a view on the table
+B. Create an index on the table
+C. Create a synonym on the table
+D. Add a virtual column to the table
+E. Update the table using the UPDATE statement
+F. Delete rows in the table using the DELETE command
+Answer: A,C
+Explanation:
+Topic 2, Volume B
+QUESTION NO: 71
+Which two statements are true regarding listeners? (Choose two.)
+A. Listeners use only the TCP/IP protocol.
+B. Multiple listener processes can run simultaneously on a host.
+C. Multiple database instances can be registered with a single listener.
+D. The listener-related errors can be traced only at the administrative level.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 38
+E. Only one database instance can be registered with a single listener at any time.
+Answer: B,C
+Explanation:
+QUESTION NO: 72
+Which three statements are correct about temporary tables? (Choose three.)
+A. Indexes and views can be created on temporary tables.
+B. Both the data and the structure of temporary tables can be exported.
+C. Temporary tables are always created in a user's temporary tablespace.
+D. The data inserted into a temporary table in a session is available to other sessions.
+E. Data manipulation language (DML) locks are never acquired on the data of temporary tables.
+Answer: A,C,E
+Explanation:
+QUESTION NO: 73
+You set the following parameters in the parameter file and restarted the database:
+MEMORY_MAX_TARGET=0
+MEMORY_TARGET=500M
+PGA_AGGREGATE_TARGET=90M
+SGA_TARGET=270M
+Which two statements are true about these parameters after the database instance is restarted?
+(Choose two.)
+A. The MEMORY_MAX_TARGET parameter is automatically set to 500 MB.
+B. The PGA_AGGREGATE_TARGET and SGA_TARGET parameters are automatically set to
+zero.
+C. The value of the MEMORY_MAX_TARGET parameter remains zero until it is changed
+manually.
+D. The lower bounds of PGA_AGGREGATE_TARGET and SGA_TARGET parameters are set to
+90 MB and 270 MB, respectively.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 39
+Answer: A,D
+Explanation:
+QUESTION NO: 74
+You have issued a SHUTDOWN ABORT command to bring down your database instance.
+Consider the steps that will be performed later when you open the database:
+1. SGA is allocated.
+2. Control file is read.
+3. Redo log files are opened.
+4. Instance recovery is started.
+5. Background processes are started.
+6. Data file headers are checked for consistency.
+7. Server parameter file or the initialization parameter file is read.
+Which option has the correct order in which these steps occur?
+A. 7, 1, 5, 2, 3, 6, 4
+B. 1, 2, 3, 7, 5, 6, 4
+C. 7, 1, 4, 5, 2, 3, 6
+D. 1, 7, 5, 4, 2, 3, 6
+Answer: A
+Explanation:
+QUESTION NO: 75
+A user, who is authenticated externally, logs in to a remote machine and connects to the database
+instance. What action would you take to ensure that a user cannot connect to the database
+instance by merely logging in to a remote machine?
+A. Set REMOTE_OS_ROLES to FALSE
+B. Set OS_ROLES parameter to FALSE
+C. Set the REMOTE_OS_AUTHENT parameter to FALSE
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 40
+D. Set the REMOTE_LOGIN_PASSWORD_FILE parameter to NONE
+Answer: C
+Explanation:
+QUESTION NO: 76
+Which two statements are true about setting the FAST_START_MTTR_TARGET initialization
+parameter to a nonzero value? (Choose two.)
+A. The MTTR advisor will be disabled
+B. Automatic checkpoint tuning will be enabled
+C. The value for the LOG_CHECKPOINT_INTERVAL initialization parameter will be override the
+value for FAST_START_MTTR_TARGET
+D. The time taken to recover the instance after the crash is always exactly the same as the value
+given for the
+FAST_START_MTTR_TARGET initialization parameter
+Answer: B,C
+Explanation:
+QUESTION NO: 77
+You want to create a role to meet these requirements:
+1. The role is to be protected from unauthorized usage.
+2. The password of the role is not to be embedded in the application source code or stored in a
+table.
+Which method would you use to restrict enabling of such roles?
+A. Create the role with external authentication.
+B. Create the role as a secure application role.
+C. Create the role as a password-protected role.
+D. Create a role and use Fine-Grained Access Control (FGAC) to secure the role.
+Answer: B
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 41
+QUESTION NO: 78
+Note the following points describing various utilities in Oracle Database 11g:
+Which point describes the Oracle Data Pump utility?
+1. It enables the transfer of data from one database to another
+2. It provides a complete solution for the backup, restoration and recovery needs of the entire
+database
+3. It enables the loading of data from an external file into tables of an Oracle Database
+4. It provides a tape backup management for the Oracle ecosystem
+A. 1
+B. 2
+C. 3
+D. 4
+E. 1 and 3
+F. 1, 2, 3 and 4
+Answer: A
+Explanation:
+QUESTION NO: 79
+See the Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 42
+Identify the component marked with a question mark:
+A. Checkpoint (CKPT)
+B. Process Monitor (PMON)
+C. Archiver Processes (ARcn)
+D. Recoverer Process (RECO)
+E. Memory Manager Process (MMAN)
+Answer: A
+Explanation:
+QUESTION NO: 80
+Your database is configured in shared server mode. However, your senior DBA asks you to modify
+the value of the PRIVATE_SGA limit in the profile of the users.
+What could be the reason for this?
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 43
+A. To limit the User Global Area (UGA) memory allocated to a session from the SGA
+B. To limit the amount of memory to be used for the dispatcher queue of a session in SGA
+C. To limit the amount of memory to be used for the request pool in System Global Area (SGA)
+D. To control the amount of memory allocated in SGA for the local variables for each shared
+server process
+Answer: A
+Explanation:
+QUESTION NO: 81
+You used the IMMEDIATE option to shutdown your database instance. Consider the steps that will
+be performed later when you open the database:
+1. SGA is allocated.
+2. Control file is read.
+3. Redo log files are read.
+4. Instance recovery is started.
+5. Background processes are started.
+6. Data files are checked for consistency.
+7. Server parameter file or the initialization parameter file is read.
+Which option has the correct order in which these steps occur?
+A. 7, 1, 5, 2, 3, 6, 4
+B. 1, 5, 7, 2, 3, 6; step 4 is not required
+C. 7, 1, 5, 2, 3, 6 step 4 is not required
+D. 1, 2, 3, 5, 6, 4; step 7 is not required
+Answer: C
+Explanation:
+QUESTION NO: 82
+Automatic Shared Memory Management (ASMM) has been enabled for your database instance.
+The initialization parameters for the components that are managed by ASMM are not set. After
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 44
+observing the effects of ASMM, you executed the following command:
+SQL> ALTER SYSTEM SET DB_CACHE_SIZE = 100M;
+Which statement is true in this scenario?
+A. The minimum memory size for the database buffer cache is set to 100 MB.
+B. The maximum memory size that can be obtained by the database buffer cache during ASMM is
+set to 100 MB.
+C. The minimum memory size allocated for a server process in the database buffer cache in
+dedicated mode is set to 100 MB.
+D. The maximum memory size from the database buffer cache that can be released for dynamic
+distribution during ASMM is set to 100 MB.
+Answer: A
+Explanation:
+QUESTION NO: 83
+Examine the values for the following initialization parameters:
+FAST_START_MTTR_TARGET=0
+LOG_CHECKPOINT_INTERVAL=0
+Which two will be the implications of these values in your database? (Choose two.)
+A. The SGA advisor will be disabled
+B. The MTTR advisor will be disabled
+C. Automatic checkpoint tuning will be disabled
+D. Checkpoint information will not be written to the alert log file
+Answer: B,C
+Explanation:
+QUESTION NO: 84
+View the Exhibit to examine the output for the CROSSCHECK BACKUP command.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 45
+Which statement is true about the output of the command?
+A. The backup piece is expired as the new backup is available
+B. The backup piece is expired because the operating-system file was not found
+C. The backup piece is expired because the retention period for the backup has expired
+D. The backup piece is expired because the backup set to which it belongs is not complete
+Answer: B
+Explanation: EXPIRED and AVAILABLE Status
+You can view the status of backup sets and copies recorded in the RMAN repository through LIST,
+vs views, or recovery catalog views (if you use RMAN with a catalog). Table 2-4 describes the
+meaning of each status.
+The crosscheck command only processes files created on the same device type as the channels
+used for the crosscheck. The crosscheck command checks only objects marked available or
+expired in the repository by examining the files on disk for disk channels or by querying the media
+manager for sbc channels.
+The CROSSCHECK command only processes files created on the same device type as the
+channels used for the crosscheck. The CROSSCHECK command checks only objects marked
+AVAILABLE or EXPIRED in the repository by examining the files on disk for DISK channels or by
+querying the media manager for sbt channels.
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 46
+CROSSCHECK
+Purpose
+Use the CROSSCHECK command to synchronize the physical reality of backups and copies with
+their logical records in the RMAN repository.
+QUESTION NO: 85
+The instance abnormally terminates because of a power outage.
+Which statement is true about redo log files during instance recovery?
+A. Inactive and current redo log files are required to accomplish recovery
+B. Online and archived redo files are required to accomplish instance recovery
+C. All redo log entries after the last checkpoint are applied from redo log files to data files
+D. All redo log entries recorded in the current log file until the checkpoint position are applied to
+data files
+Answer: C
+Explanation:
+QUESTION NO: 86
+Which statement is true about loading data using the conventional path of SQL*Loader?
+A. Redo is not generated while performing conventional path loads
+B. Only PRIMARY KEY, UNIQUE KEY and NOT NULL constraints are checked
+C. No exclusive locks are acquired when the conventional path loads are performed
+D. Instead of performing transactions, SQL*Loader directly writes data blocks to the data files
+E. INSERT triggers are disabled before the conventional path load and reenabled at the end of the
+load
+Answer: C
+Explanation:
+QUESTION NO: 87
+Why does performance degrade when many UPDATE, INSERT or DELETE statements are
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 47
+issued on a table that has an associated bitmap index?
+A. The DML operations re-create the bitmap index blocks
+B. The bitmap index is rebuilt automatically after a DML operation
+C. The smallest amount of a bitmap that can be locked is a bitmap segment
+D. Additional time is taken to remove NULL values from the bitmap index after a DML operation
+Answer: C
+Explanation:
+QUESTION NO: 88
+View the Exhibit and examine the undo tablespace attributes. Your database instance is
+experiencing a large volume of transactions from non-DBA users in the last one hour. The undo
+tablespace NDOTBS1 is full with transactions and no transaction was committed more than one
+hour ago. The database has two more undo tablespaces.
+What happens to the new DML operations in this scenario?
+Exhibit:
+A. The DML commands will fail
+B. The undo data generated by the DML is stored in one of the two other undo tablespace
+C. The undo data generated by the DML will overwrite the extents that contain committed undo
+data
+D. The undo data generated by the DML is stored in the SYSTEM undo segment of the SYSTEM
+tablespace
+Answer: A
+Explanation:
+Tablespaces in the Preconfigured Database (continued)
+? TEMP: Your temporary tablespace is used when you execute a SQL statement that requires the
+creation of temporary segments (such as a large sort or the creation of an index). Just as each
+user is assigned a default tablespace for storing created data objects, each user is assigned a
+temporary tablespace. The best practice is to define a default temporary tablespace for the
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 48
+database, which is assigned to all newly created users unless otherwise specified. In the
+preconfigured database, the TEMP tablespace is specified as the default temporary tablespace.
+This means that if no temporary tablespace is specified when the user account is created. Oracle
+Database assigns this tablespace to the user.
+? UNDOTBS1: This is the undo tablespace used by the database server to store undo information.
+If a database uses Automatic Undo Management, it must have exactly one active undo tablespace
+per instance at any given time. This tablespace is created at database creation time.
+? USERS: This tablespace is used to store permanent user objects and data. In the preconfigured
+database, the USERS tablespace is the default tablespace for all objects created by nonsystem
+users. For the SYS and SYSTEM users (the system users), the default permanent tablespace
+remains SYSTEM.
+? EXAMPLE: This tablespace contains the sample schema* that can be installed when you create
+the database. The sample schemas provide a common platform for examples. Oracle
+documentation and courseware contain examples based on the sample schemas.
+Note: To simplify administration, it is common to have a tablespace for indexes alone.
+QUESTION NO: 89
+You want to configure and schedule offline database backups to run automatically.
+Which tool or utility would you use to achieve this?
+A. The XML script
+B. The PL/SQL script
+C. The DBMS_SCHEDULER package
+D. Enterprise Manager to schedule the backup
+Answer: D
+Explanation:
+QUESTION NO: 90
+In which of the scenario will the DBA perform recovery? (Choose all that apply.)
+A. The alert log file is corrupted
+B. A tablespace is accidentally dropped
+C. One of the redo log members is corrupted
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 49
+D. A database user terminates the session abnormally
+E. The hard disk on which the data files is stored is corrupted
+Answer: B,E
+Explanation:
+QUESTION NO: 91
+Which two statements are true regarding undo tablespaces? (Choose two.)
+A. The database can have more than one undo tablespace
+B. The UNDO_TABLESPACE parameter is valid in both automatic and manual undo management
+C. Undo segments automatically grow and shrink as needed, acting as circular storage buffer for
+their assigned transactions
+D. An undo tablespace is automatically created if the UNDO_TABLESPACE parameter is not set
+and the UNDO_MANAGEMENT parameter is set to AUTO during the database instance start up
+Answer: A,C
+Explanation:
+QUESTION NO: 92
+Your database instance is configured with automatic undo management and the
+UNDO_RETENTION parameter is set to 900 seconds. You executed the following command to
+enable retention guarantee:
+SQL> ALTER TABLESPACE undotbs1 RETENTION GUARANTEE;
+What affect would this command have on the database?
+A. The extents in the undo tablespace retain data until the next full database backup
+B. The extents containing committed undo in the undo tablespace are not overwritten for at least
+15 minutes
+C. The extents containing committed data in the undo tablespace are not overwritten until the
+instance is shut down
+D. The extents containing committed undo in the undo tablepace are transferred to Flash
+Recovery Area before being overwritten
+Answer: B
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 50
+QUESTION NO: 93
+You configured the Flash Recovery Area for your database. The database instance has been
+started in ARCHIVELOG mode and the LOG_ARCHIVE_DEST_1 parameter is not set.
+What will be the implications on the archiving and the location of archive redo log files?
+A. Archiving will be disabled because the destination for the redo log files is missing
+B. The database instance will shut down and the error details will be logged in the alert log file
+C. Archiving will be enabled and the destination for the archived redo log file will be set to the
+Flash Recovery Area implicitly
+D. Archiving will be enabled and the location for the archive redo log file will be created in the
+default location $ORACLE_HOME/log
+Answer: C
+Explanation: LOG_ARCHIVE_DEST_n
+The LOG_ARCHIVE_DEST_n parameters (where n = 1, 2, 3, ... 10) define up to ten archive log
+destinations.
+The parameter integer suffix is defined as the handle displayed by the V$ARCHIVE_DEST
+dynamic performance view.
+Values:
+SERVICE
+Specifies a standby destination. Oracle Net (IPC or TCP) transmits the archivelog. A standby
+instance must be associated with the destination. The value represented by tnsnames_service
+corresponds to an appropriate service name in tnsnames.ora.
+LOCATION
+Specifies a local file system destination. You must specify this parameter for at least one
+destination.
+MANDATORY
+Specifies that archiving to the destination must succeed before the redo log file can be made
+available for reuse.
+OPTIONAL
+Specifies that successful archiving to the destination is not required before the redo log file can be
+made available for reuse. If the "must succeed count," set with
+LOG_ARCHIVE_MIN_SUCCEED_DEST, is met, the redo logfile is marked for reuse. This is the
+default.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 51
+REOPEN
+Specifies the minimum number of seconds before the archiver process (ARCn, foreground, or log
+writer process) should try again to access a previously failed destination. Future attempts are
+made when the next redo log file is archived. If a destination is MANDATORY, then Oracle
+recommends that you specify a REOPEN time that reduces the possibility of primary database
+shutdown due to lack of available online redo log files.
+If you do not specify seconds, then the default value is 300
+QUESTION NO: 94
+Which is the correct description of a pinned buffer in the database buffer cache?
+A. The buffer is currently being accessed
+B. The buffer is empty and has not been used
+C. The contents of the buffer have changed and must be flushed to the disk by the DBWn process
+D. The buffer is a candidate for immediate aging out and its contents are synchronized with the
+block contents on the disk
+Answer: A
+Explanation:
+QUESTION NO: 95
+In which situation would you use static database registration for a listener?
+A. When multiple databases are to be registered with the listener
+B. When DBAs need to connect remotely to start up the database instance
+C. When users need to connect the database instance using the host naming method
+D. When the database instance that is to be registered with the listener is configured in shared
+server mode
+Answer: B
+Explanation:
+QUESTION NO: 96
+While observing the index statistics, you find that an index is highly fragmented, thereby resulting
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 52
+in poor database performance. Which option would you use to reduce fragmentation without
+affecting the users who are currently using the index?
+A. Validate the index structure using the ANALYZE .... INDEX command
+B. Rebuild the index using the ALTER INDEX ..... REBUILD ONLINE command
+C. Change the block space utilization parameters using the ALTER INDEX command
+D. Deallocate the unused space in the index using the ALTER INDEX ... DEALLOCATE UNUSED
+command
+Answer: B
+Explanation:
+QUESTION NO: 97
+See the Exhibit to observe the roles assigned to the SL_REP user.
+Which statement is true about the assignment of the SELECT_CATALOG_ROLE role to the
+SL_REP user?
+A. The user must enable the role explicitly
+B. The user can grant the role to other users
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 53
+C. The user cannot user the role until the DBA enables it explicitly
+D. The user can start using the role immediately without any changes
+Answer: A
+Explanation:
+QUESTION NO: 98
+To make audit information more productive, the DBA executes the following command before
+starting an audit operations:
+SQL>ALTER SYSTEM SET AUDIT_TRAIL=DB,EXTENDED SCOPE=SPFILE;
+Which statement is true regarding the audit record generated when auditing starts after restarting
+the database?
+A. It contains only the plan for the SQL statement executed by the user
+B. It contains the SQL text executed by the user and the bind variables used with it
+C. It contains the plan and statistics associated with the SQL statement executed by the user
+D. It contains the plan for the SQL statement executed by the user and the bind variables used
+with it
+Answer: B
+Explanation:
+QUESTION NO: 99
+database, DEVDB, to the production database, PRODDB. A database link devdb.us.oracle.com is
+created between PRODDB and DEVDB. You execute the following command on the PRODDB
+database server:
+$ impdp system/manager directory = DB_DATA
+dumpfile = schemas.dat
+schemas = hr
+flashback_time = "TO_TIMESTAMP('25-08-2007 14:35:00', 'DD-MM-YYYY HH24:MI:SS')"
+The command fails displaying the following error:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 54
+ORA-39001: invalid argument value
+ORA-39000: bad dump file specification
+ORA-31640: unable to open dump file "/home/oracle/schema/schemas.dat" for read ORA-27037:
+unable to obtain file status
+What would you do to overcome the error?
+A. Add the user, SYSTEM, to the schemas option.
+B. Add the network_link = devdb.us.oracle.com option.
+C. Change the dumpfile option to schema.dat@devdb.us.oracle.com.
+D. Replace the schemas option with the network_link = devdb.us.oracle.com
+E. Replace the dumpfile option with the network_link = devdb.us.oracle.com
+Answer: E
+Explanation:
+The Data Pump import command, impdp, can now use this database link to directly access remote
+data. The command line parameter NETWORK_LINK points to the source database via its
+database link.
+When you use the network_link parameter, you directly import from the remote database. There is
+no export made, and directories are not used.
+QUESTION NO: 100
+Which two statements are true about the Automatic Database Diagnostic Monitor (ADDM)?
+(Choose two.)
+A. The ADDM requires at least four AWR snapshots for analysis
+B. The ADDM runs after each AWR snapshot is collected automatically by MMON
+C. The results of the ADDM analysis are stored in the Automatic Workload Repository (AWR)
+D. The ADDM analysis provides only diagnostics information but does not provide
+recommendations
+E. The ADDM calls other advisors if required, but does not provide recommendations about the
+advisors
+Answer: B,C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 55
+QUESTION NO: 101
+Which task would you perform before you run Oracle Universal Installer (OUI) in silent or
+suppressed mode for an installation?
+A. Run the root.sh script.
+B. Create the oraInst.loc file.
+C. Create the tnsnames.ora file.
+D. Run the oraInstRoot.sh script.
+Answer: B
+Explanation:
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+QUESTION NO: 102
+You are working on an instance started using the SPFILE. You want to move the Flash Recovery
+Area of your database to a new location. You want the Flashback log files to be stored in the new
+location. Given below are the steps to accomplish the task in random order:
+1) Shut down the instance.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 56
+2) Change the value of the DB_RECOVERY_FILE_DEST initialization parameter to a new value.
+3) Execute the ALTER DATABASE FLASHBACK OFF command.
+4) Start up the instance and mount the database.
+5) Execute the ALTER DATABASE FLASHBACK ON command.
+6) Open the database.
+Select the correct order in which these tasks need to be performed.
+A. 2, 1, 4, 3, 5, 6
+B. 1, 4, 3, 2, 6, 5
+C. 1, 4, 2, 6, 3, 5
+D. 3, 2, 1, 4, 5, 6
+Answer: A
+Explanation:
+How to change Flash Recovery Area to a new location?
+If you need to move the Flash Recovery Area of your database to a new location, invoke
+SQL*Plus to change the DB_RECOVERY_FILE_DEST initialization parameter.
+For example:
+ALTER SYSTEM SET DB_RECOVERY_FILE_DEST='+disk1' SCOPE=BOTH SID='*';
+After you change this parameter, all new Flash Recovery Area files will be created in the new
+location.
+The permanent files (control files and online redolog files), flashback logs and transient files can
+be left in the old Flash Recovery Area location. The database will delete the transient files from the
+old Flash Recovery Area location as they become eligible for deletion.
+For the FLASHBACK logfiles to be able to to pick up the new 'db_recovery_file_dest' location, the
+flashback option needs to be toggled off and on.
+This can be done like this:
+- Shutdown the Database
+- Startup mount the Database:
+SQL> startup mount;
+- Toggle the Flashback off:
+SQL> alter database flashback off;
+- Toggle the Flashback on:
+SQL> alter database flashback on;
+- Open the Database:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 57
+SQL> alter database open;
+If you need to actually move your current permanent files, transient files, to the new Flash
+Recovery Area, then follow the following steps:
+1) To move the existing backupsets and archived redo log files, use the following command:
+RMAN> BACKUP AS COPY ARCHIVELOG ALL DELETE INPUT;
+RMAN> BACKUP DEVICE TYPE DISK BACKUPSET ALL DELETE INPUT;
+QUESTION NO: 103
+You are in the middle of a transaction updating a very important table. The machine on which a
+database was running reboots because of power outage. This caused a database instance failure.
+Which statement is true in this situation?
+A. The online redo log files and archived redo log files are required to accomplish the recovery
+B. The uncommitted transaction will be committed at the next startup of the database instance
+C. The uncommitted transaction is rolled back automatically at the next opening of the database
+D. The DBA has to perform the recovery on the database to recover the uncommitted transaction
+Answer: C
+Explanation:
+QUESTION NO: 104
+View the Exhibit to examine the output produced by the following query at three different times
+since the database instance started and has experienced workloads of different capacities:
+SQL> SELECT substr(component, 0, 10) COMP, current_size CS, user_specified_size US
+FROM v$memory_dynamic_components
+WHERE current_size!=0;
+What do you infer from this?
+Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 58
+A. The database instance is running with manual PGA management.
+B. The database instance is running with manual shared memory management.
+C. The database instance has the MEMORY_TARGET value set to a nonzero value.
+D. All sessions are connected to the database instance in dedicated mode, and no RMAN or
+parallel query operations have been performed.
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 59
+MEMORY_TARGET specifies the Oracle system-wide usable memory. The database tunes
+memory to the MEMORY_TARGET value, reducing or enlarging the SGA and PGA as needed.
+In a text-based initialization parameter file, if you omit MEMORY_MAX_TARGET and include a
+value for MEMORY_TARGET, then the database automatically sets MEMORY_MAX_TARGET to
+the value of MEMORY_TARGET. If you omit the line for MEMORY_TARGET and include a value
+for MEMORY_MAX_TARGET, the MEMORY_TARGET parameter defaults to zero. After startup,
+you can then dynamically change MEMORY_TARGET to a nonzero value, provided that it does
+not exceed the value of MEMORY_MAX_TARGET.
+QUESTION NO: 105
+Your database instance is started using the server parameter file (SPFILE). You executed a
+command to change the value of the LOG_BUFFER initialization parameter:
+ALTER SYSTEM SET LOG_BUFFER=32M SCOPE=BOTH;
+What would be the outcome of this command?
+A. The command succeeds only if Automatic Memory Management is not enabled.
+B. The command succeeds, but you need to restart the database for changes to take effect.
+C. The command returns an error because the size of the redo log buffer cannot be changed
+dynamically.
+D. The parameter value is changed and it comes into effect as soon as space becomes available
+in the System Global Area (SGA).
+Answer: C
+Explanation:
+QUESTION NO: 106
+The database instance is currently using SPFILE. View the Exhibit and examine the error that you
+received while running the DB Structure Integrity check. Given below are the steps to recover from
+the error in random order:
+1. Shut down the instance, if not already done.
+2. Copy one of the remaining control files to a new location.
+3. Change the value of the CONTROL_FILES initialization parameter to correspond to the new
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 60
+location of the control files.
+4. Start up the database instance to the NOMOUNT stage.
+5. Recover the database to the point of failure of the control file.
+6. Open the database.
+Identify the correct sequence of steps?
+Exhibit:
+A. 1, 2, 4, 3, 5, 6
+B. 2, 4, 3, 5, 6; 1 not required
+C. 4, 5, 6, 2, 3; 1 not required
+D. 5, 2, 3, 4; 1 and 6 not required
+Answer: A
+Explanation:
+QUESTION NO: 107
+You are working on a new Oracle Database 11g server, where only the software is installed and
+no database is created. You plan to create a database on this server using the Database
+Configuration Assistant (DBCA).
+Some of the requirements set for your database creation task are:
+1. Configure the database to operate in shared server mode.
+2. Disable automatic maintenance tasks such as optimizer statistics collection.
+3. Configure a naming method to help the remote user connect to the database instance.
+4. Use Automatic Storage Management (ASM) for storing the database files.
+5. Configure daily database backup to flash recovery area.
+6. Configure Enterprise Manager Database Control to manage the database.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 61
+Which of these requirements can be met while creating the database?
+A. 4 and 6
+B. 2, 3, 4, and 6
+C. 1, 2, 4, 5, and 6
+D. 1, 2, 3, 4, 5, and 6
+Answer: C
+Explanation:
+QUESTION NO: 108
+Examine the following output:
+Which two statements about the above index are true? (Choose two.)
+A. It is ignored by the query optimizer.
+B. It is not used while the index is being rebuilt.
+C. The index cannot be rebuilt, and has to be re-created.
+D. The index is automatically rebuilt when used the next time.
+Answer: A,B
+Explanation:
+QUESTION NO: 109
+In a system, large online transaction processing (OLTP) jobs run during the daytime that require a
+large database buffer cache. In the night, the system supports batch jobs that require a higher
+value to be set for the large pool. You must simultaneously configure the memory components to
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 62
+accommodate the peak requirement.
+What would you do to automate this configuration for the memory components with change in
+mode of working?
+A. Set the SGA_TARGET initialization parameter to zero.
+B. Set the PRE_PAGE_SGA initialization parameter to TRUE.
+C. Set the MEMORY_MAX_TARGET initialization parameter to zero.
+D. Set the SGA_TARGET initialization parameter to a nonzero value.
+Answer: D
+Explanation:
+QUESTION NO: 110
+You have executed this command to change the size of the database buffer cache:
+SQL> ALTER SYSTEM SET DB_CACHE_SIZE=2516582;
+System altered.
+To verify the change in size, you executed this command:
+Why is the value set to 4194304 and not to 2516582?
+A. Because 4194304 is the granule size
+B. Because 4194304 is the standard block size
+C. Because 4194304 is the largest nonstandard block size defined in the database
+D. Because 4194304 is the total size of data already available in the database buffer cache
+Answer: A
+Explanation:
+Regardless of whether you are using automatic or manual memory management, you'll find that
+memory is allocated to the various pools in the SGA in units called granules. A single granule is an
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 63
+area of memory of 4MB, 8MB, or 16MB in size. The granule is the smallest unit of allocation, so if
+you ask for a lava pool of 5MB and your granule size is 4MB. Oracle will actually allocate 8MB to
+the lava pool (8 being the smallest number greater than or equal to 5 that is a multiple of the
+granule size of 4). The size of a granule is determined by the size of your SGA (this sounds
+recursive to a degree, as the size of the SGA is dependent on the granule size). Vim can view the
+granule sizes used for each pool by querying V$SGA_DYNAMIC_COMPONENTS. In fact, we can
+use this view to see how the total SGA size might affect the size of the granules:
+QUESTION NO: 111
+Identify two situations in which the block header grows in a data block. (Choose two.)
+A. When row directories need more row entries
+B. When there is row migration in the data block
+C. When there is an increase in the PCTFREE value for the data block
+D. When more transaction slots are required than are initially configured
+Answer: A,D
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 64
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+Database Block: Contents
+? Block header: The block header contains the segment type (such as table or index), data block
+address, table directory, row directory, and transaction slots of size 24 bytes each, which are used
+when modifications are made to rows in the block. The block header grows downward from the
+top.
+? Row data: This is the actual data for the rows in the block. Row data space grows upward from
+the bottom.
+? Free space: Free space is in the middle of the block, enabling the header and the row data
+space to grow when necessary. Row data takes up free space as new rows are inserted or as
+columns of existing rows are updated with larger values.
+Examples of events that cause header growth:
+- Row directories that need more row entries
+- More transaction slots required than initially configured
+Initially, the free space in a block is contiguous. However, deletions and updates may fragment the
+free space in the block. The free space in the block is coalesced by the Oracle server when
+necessary.
+QUESTION NO: 112
+You are installing Oracle Database 11g on your server. During the installation Oracle Universal
+Installer (OUI) prompts you to enter the path of the inventory directory and also prompts you to
+specify an operating system group name.
+Which statement is true in this case?
+A. The ORACLE_BASE parameter is not set.
+B. The installation is being performed by the root user.
+C. The operating system group that will be specified should have root user as its member.
+D. The installation is being performed without the "Create Starter Database" option selected.
+E. The operating system group that will be specified must have permission to write to the inventory
+directory.
+Answer: E
+Explanation:
+QUESTION NO: 113
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 65
+You are installing Oracle Database 11g on a machine. When you run the installer, the Universal
+Installer (OUI) shows the message that says one of the product-specific prerequisite checks has
+failed:
+Checking available swap space requirements ...
+Expected result: 1512MB
+Actual Result: 1018MB
+Check complete. The overall result of this check is: Failed <<<< Problem: The system does not
+have the required swap space.
+What happens to the installation in this situation?
+A. It can be continued.
+B. It resizes the swap space automatically when you proceed further.
+C. It can be continued, but the instance cannot be started without increasing the swap space.
+D. It shows a message saying one or more prerequisite checks have failed and the installation
+cannot proceed.
+Answer: A
+Explanation:
+QUESTION NO: 114
+View the Exhibit.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 66
+You want to create a tablespace to contain objects with block size 16 KB. But while configuring the
+storage you find that the block size that you can provide is only 8 KB.
+Which configuration could have enabled the block selection of 16 KB?
+A. Choosing the extent allocation type to uniform
+B. Choosing the Segment Space Management option to manual
+C. Setting autoextension on for the data file mentioned for the tablespace
+D. Setting the DB_16K_CACHE_SIZE parameter for the database instance to a nonzero value
+Answer: D
+Explanation:
+DB_16K_CACHE_SIZE parameter used to specify size of cache in 16K buffers i.e. other than
+default size specified by using DB_BLOCK_SIZE. This can be used only when DB_BLOCK_SIZE
+is not set 16384. Do not set this parameter value to zero if any tablespace has block size as 16KB.
+This parameter can be set only when operating system specific minimum block size not restricted
+greater than 4KB.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 67
+QUESTION NO: 115
+Which two statements about the background process of the database writer are true? (Choose
+two.)
+A. It is possible to have multiple database writers in an Oracle instance.
+B. It writes dirty buffers, if any, to data files whenever a checkpoint occurs.
+C. It writes dirty buffers, if any, to data files whenever a transaction commits.
+D. It writes dirty buffers, if any, to data files before the log writer (LGWR) writes.
+Answer: A,B
+Explanation:
+QUESTION NO: 116
+The TRANS_SUMMARY table contains product-wise transaction details that get updated with
+every transaction in the system. Each row has cumulative transaction details of a single product
+and every product is identified by a product code, which is the primary key.
+As part of the archival process, the company wants to transfer the rows in the TRANS_SUMMARY
+table to the TRANS_SUMMARY_DUP table at the end of every quarter of the year. Along with
+existing products, the company deals with many new products during every quarter.
+Which method is best suited for this quarterly data transfer?
+A. Using the MERGE command
+B. Using the SQL*Loader utility
+C. Using the correlated UPDATE command
+D. Using the INSERT command to perform bulk operation
+Answer: A
+Explanation:
+QUESTION NO: 117
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 68
+Which two statements are true regarding a PL/SQL package body? (Choose two.)
+A. It cannot be created without a package specification.
+B. It cannot invoke subprograms defined in other packages.
+C. It can contain only the subprograms defined in the package specification.
+D. It can be changed and recompiled without making the package specification invalid.
+Answer: A,D
+Explanation:
+Package Specification and Body
+Package bodies:
+? Are separate from package specifications. Because of this, the code of the body can be changed
+and recompiled, and other objects that are dependent on the specification are not marked invalid.
+? Contain the code for subprograms defined in the package specification. This is where the work is
+done. The specification shows how to call subprograms within the package: the body is the code
+section
+? Cannot be compiled unless the package specification has already been compiled. You can
+create a specification without a body- but you cannot create a body without a specification.
+? May be wrapped to hide details of the code. Wrap is a stand-alone program that obfuscates PL
+SQL source code so that you can deliver PL SQL applications without exposing your source code.
+For more information about the use of wrap, see the PL/SQL Packages and Types Reference.
+QUESTION NO: 118
+In your database instance, the user sessions are connected to the database server from the
+remote machines. You want to achieve the following for these users:
+1. The user account must be locked after four unsuccessful login attempts.
+2. The user must be prompted to change the password at regular intervals.
+3. The user may not have more than three simultaneous sessions.
+4. The user session must automatically be logged off if more than 10 minutes elapsed time used.
+How would you accomplish the above?
+A. By assigning profiles for the users
+B. By implementing Fine-Grained Auditing (FGA)
+C. By granting a secure application role to the users
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 69
+D. By implementing the Database Resource Manager plan
+Answer: A
+Explanation:
+QUESTION NO: 119
+Observe the information in the columns:
+Which option has the correct match between the memory areas and their contents?
+A. 1-c, 2-b, 3-d, 4-a
+B. 1-b, 2-c, 3-d, 4-a
+C. 1-a, 2-b, 3-c, 4-d
+D. 1-a, 2-b, 3-d, 4-c
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 70
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+QUESTION NO: 120
+You are using Enterprise Manager to schedule backups for your database.
+Which type of script would be generated by the backup scheduler?
+A. XML script
+B. PL/SQL script
+C. Operating system script
+D. Recovery Manager (RMAN) script
+Answer: D
+Explanation:
+? Recovery Manager (RMAN): Oracle tool that provides a complete solution for the backup,
+restoration, and recovery needs of the entire database or of specific database files.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 71
+QUESTION NO: 121
+Note the following functionalities of various background processes:
+1. Record the checkpoint information in data file headers.
+2. Perform recovery at instance startup.
+3. Cleanup unused temporary segments.
+4. Free the resources used by a user process when it fails.
+5. Dynamically register database services with listeners.
+6. Monitor sessions for idle session timeout.
+Which option has the correct functionalities listed for a background process?
+A. Archiver Process (ARCn): 1, 2, 5
+B. System Monitor Process (SMON): 1, 4, 5
+C. Process Monitor Process (PMON): 4, 5, 6
+D. Database Writer Process (DBWn): 1, 3, 4
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 72
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+QUESTION NO: 122
+Which statement is true about the UNDO_RETENTION parameter when retention guarantee is not
+enabled?
+A. It is the time period after which the undo data becomes obsolete.
+B. It is the time period after which the committed undo data would be transferred to a temporary
+tablespace.
+C. It is the minimum time period up to which the committed undo data would be retained if free
+undo space is available.
+D. It is the time period after which the undo data is transferred to the Flash Recovery Area to
+provide read consistency.
+Answer: C
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 73
+Explanation:
+QUESTION NO: 123
+Which statement is true about a whole consistent database backup on a database running in
+ARCHIVELOG mode?
+Exhibit:
+A. The backup will consist of used data blocks only.
+B. The database must be shut down to accomplish the backup.
+C. The backup can be accomplished without shutting down the database.
+D. The backup will contain all database files that have never been backed up.
+Answer: B
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 74
+Explanation:
+QUESTION NO: 124
+You have a large amount of historical data in a flat file. Some analysts in your organization need to
+query this data in the file. The file is too large to load the data in it into your current database.
+Which is the most effective method to access this data in your database?
+A. Use the database link.
+B. Use the SQL*Loader utility.
+C. Use the Oracle Data Pump utility.
+D. Create an external table and leave the data in the flat file.
+Answer: D
+Explanation:
+QUESTION NO: 125
+Which statements are true regarding the creation of an incident package file by using the EM
+Workbench Support? (Choose all that apply.)
+A. You can add SQL test cases to the incident package.
+B. You can add or remove the trace files to the package.
+C. You cannot create an incremental incident package when the physical files are purged from the
+ADR.
+D. You can create the incremental incident package ZIP file for new or modified diagnostic
+information for the incident package already created.
+Answer: A,B,D
+Explanation:
+QUESTION NO: 126
+You are managing an Oracle Database 11g database. You want to ensure the recovery of the
+database to the point of failure. Which configuration will you do to accomplish the task?
+A. Multiplex all database files.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 75
+B. Configure the Flash Recovery Area.
+C. Configure the database instance for ARCHIVELOG mode.
+D. Configure the FAST_START_MTTR_TARGET initialization parameter.
+Answer: C
+Explanation:
+QUESTION NO: 127
+View the Exhibit and examine the user information.
+The user has been granted CONNECT and RESOURCE roles and no individual system privileges.
+The SL_REP user executes this command to create a table:
+SQL> CREATE TABLE orders (
+oid number(6),
+odate date,
+ccode number(4),
+oamt number(10,2)
+) TABLESPACE purchase_space;
+The PURCHASE_SPACE tablespace already exists in the database.
+Which statement describes the effect of the command?
+Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 76
+A. The command executes successfully and creates the table in the USERS tablespace.
+B. The command executes successfully and creates the table in the PURCHASE_SPACE
+tablespace.
+C. The command produces an error because the user does not have the privilege to createthe
+table.
+D. The command produces an error because the user does not have quota in the
+PURCHASE_SPACE tablespace.
+Answer: B
+Explanation:
+QUESTION NO: 128
+A constraint in a table is defined with the INITIALLY IMMEDIATE clause. You executed the
+ALTER TABLE command with the ENABLE VALIDATE option to enable the constraint that was
+disabled.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 77
+What are the two effects of this command? (Choose two.)
+A. It fails if any existing row violates the constraint.
+B. It does not validate the existing data in the table.
+C. It enables the constraint to be enforced at the end of each transaction.
+D. It prevents insert, update, and delete operations on the table while the constraint is in the
+process of being enabled.
+Answer: A,D
+Explanation:
+Deferred constraints are constraints that are checked only when a transaction is committed. If
+constraint violations are detected at commit time, the entire transaction is rolled back. These
+constraints are most useful when both the parent and child rows in a foreign key relationship are
+entered at the same tune, as in the case of an order entry system in which the order and the items
+in the order are entered at the same time. For deferrable constraints, primary key and unique keys
+need non-unique indexes; if the column or columns already have a unique index on them,
+constraint creation fails because those indexes cannot be deferred.
+Constraint Checking (continued)
+A constraint that is defined as deferrable can be specified as one of the following:
+? Initially immediate specifies that by default it must function as an immediate constraint unless
+explicitly set otherwise.
+? Initially deferred specifies that by default the constraint must be enforced only at the end of the
+transaction.
+Note: If an appropriate index already exists on the column, it is used for the constraint. An
+additional index does not need to be created for primary keys and unique keys.
+QUESTION NO: 129
+Which naming method uses the tnsnames.ora file to store the connect descriptor used by the
+client while connecting to the database instance from a remote machine?
+A. Host naming method
+B. Local naming method
+C. External naming method
+D. Directory naming method
+Answer: B
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 78
+Database Configuration Options
+Your installation process continues:
+5. Navigate through the OUI pages and specify your database configuration options. OUI displays
+a summary of your installation choices.
+6. Click Install to begin your installation of the Oracle software.
+If you chose to create a starter database as part of the installation, OUI invokes all of these
+configuration assistants:
+? Oracle Net Configuration Assistant: This configures basic network components during installation
+including:
+- Listener names and protocol addresses
+- Naming methods that the client will use to resolve connect identifiers to connect descriptors
+- Net service names in a tnsnames.ora file
+- Directory server usage
+? Oracle Database Configuration Assistant (DBCA): This creates the starter database that you
+selected. When this configuration assistant finishes, you can unlock accounts and change
+passwords.
+QUESTION NO: 130
+Which three operations require undo data? (Choose three.)
+A. Committing a transaction
+B. Flashing back a transaction
+C. Recovering a failed transaction
+D. Running a read-consistent query
+E. Changing a tablespace status from READ ONLY to READ WRITE
+Answer: B,C,D
+Explanation:
+Module 10 - Managing Undo Data Objectives
+These notes teach you about managing undo data including the method used to implement
+automatic undo data management. You will also learn to create and modify undo segments and
+how to query the data dictionary to retrieve undo segment information.
+? Beginning with Release 11 g, for a default installation, Oracle Database automatically manages
+undo.
+There is typically no need for DBA intervention.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 79
+? If your installation uses Oracle Flashback operations, you may need to perform some undo
+management tasks to ensure the success of these operations.
+Undo Purpose
+Undo records are used to:
+? Roll back transactions when a ROLLBACK statement is issued
+? Recover the database
+? Provide read consistency
+? Analyze data as of an earlier point in time by using Oracle Flashback Query
+? Recover from logical corruptions using Oracle Flashback features
+QUESTION NO: 131
+Which two activities are NOT supported by the Data Recovery Advisor (DRA)? (Choose two.)
+A. Recover from failures in the RAC environment.
+B. Diagnose and repair a data file corruption online.
+C. Diagnose and repair a data file corruption offline.
+D. Diagnose and repair failures on a standby database.
+Answer: A,D
+Explanation:
+Data Recovery Advisor
+The Data Recovery Advisor automatically gathers data failure information when an error is
+encountered. In addition, it can proactively check for failures. In this mode, it can potentially detect
+and analyze data failures before a database process discovers the corruption and signals an error.
+(Note that repairs are always under human control.)
+Data failures can be very serious. For example, if your current los files are missing, you cannot
+open your database. Some data failures (like block corruptions in data files) are not catastrophic
+because they do not take the database down or prevent you from opening the Oracle instance.
+The Data Recovery Advisor handles both cases: the one when you cannot start up the database
+(because required database files are missing, inconsistent, or corrupted) and the one when file
+corruptions are discovered during run time.
+Supported Database Configurations
+In the current release, the Data Recovery Advisor supports single-instance databases. Oracle
+Real Application Clusters databases are not supported.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 80
+The Data Recovery Advisor cannot use blocks or files transferred from a standby database to
+repair failures on a primary database. Furthermore, you cannot use the Data Recovery Advisor to
+diagnose and repair failure on a standby database. However, the Data Recovery Advisor does
+support failover to a standby database as a repair option (as mentioned above).
+QUESTION NO: 132
+Which two statements are true regarding the SGA_TARGET initialization parameter? (Choose
+two.)
+A. It can be increased up to the value of the SGA_MAX_SIZE parameter.
+B. Increasing the value of the SGA_TARGET parameter distributes the increased memory among
+all the autotuned components.
+C. Reducing the value of the SGA_TARGET parameter deallocates memory from both autotuned
+and manually sized components.
+D. Increasing the value of SGA_TARGET up to the value of SGA_MAX_SIZE disables the
+automatic shared memory management feature.
+Answer: A,B
+Explanation:
+QUESTION NO: 133
+Which statement is true about the Manageability Monitor (MMON) background process?
+A. It transfers statistics from memory to disk at regular intervals.
+B. It coordinates the rebalance activity for disk groups when ASM is used.
+C. It communicates with the Automatic Storage Management (ASM) instance on behalf of the
+database instance.
+D. It performs dynamic memory management when Automatic Shared Memory Management is
+enabled for the database instance.
+Answer: A
+Explanation:
+Other Processes
+There are several other background processes that might be running. These can include the
+following:
+The Manageability Monitor process (MMON) performs various manageability-related background
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 81
+tasks, for example:
+* Issuing alerts whenever a given metrics violates its threshold value
+* Taking snapshots by spawning additional process (MMOX slaves)
+* Capturing statistics value for SQL objects that have been recently modified
+The Lightweight Manageability Monitor process (MMXL) performs frequent tasks related to
+lightweight manageability, such as session history capture and metrics computation.
+The Memory Manager process (MMAN) is used for internal database tasks. It manages automatic
+memory management processing to help allocate memory where it is needed dynamically in an
+effort to avoid out-of-memory conditions or poor buffer cache performance.
+QUESTION NO: 134
+View the Exhibit1, which shows the options that are selected to create the user SL_REP.
+View the Exhibit2 and examine the contents of DATABASE_PROPERTIES.
+Which two statements are true regarding this user? (Choose two.)
+Exhibit1 (exhibit):
+Exhibit2 (exhibit):
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 82
+A. The user is authenticated by the operating system.
+B. The objects created by the user are placed in the USERS tablespace.
+C. The user does not require quota on the TEMP tablespace to perform sort operations.
+D. The user is forced to change the password at the first login to the database instance.
+E. The objects created by the user in future are unlocked to be accessed by all the users in the
+database by default.
+Answer: B,C
+Explanation:
+QUESTION NO: 135
+Which two statements are true regarding transactions in an Oracle database? (Choose two.)
+A. Multiple transactions can use the same undo segment.
+B. A transaction is assigned an undo segment when it is started.
+C. More than one transaction cannot share the same extent in the undo tablespace.
+D. The transactions use system undo segment to store undo data if all the segments in the undo
+tablespace are used.
+Answer: A,B
+Explanation:
+Segments
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 83
+The level of logical database storage above an extent is called a segment. A segment is a set of
+extents that are allocated for a certain logical structure. Different types of segments include:
+? Data segments: Each nonclustered. non-index-organized table has a data segment, with the
+exception of external tables, global temporary tables, and partitioned tables in which each table
+has one or more segments. All of the table's data is stored in the extents of its data segment. For
+a partitioned table, each partition has a data segment. Each cluster has a data segment. The data
+of every table in the cluster is stored in the cluster's data segment.
+? Index segments: Each index has an index segment that stores all of its data. For a partitioned
+index, each partition has an index segment.
+? Undo segments: One UNDO tablespace is created for each database instance. This tablespace
+contains numerous undo segments to temporarily store undo information. The information in an
+undo segment is used to generate read-consistent database information and. dining database
+recovery, to roll back uncommitted transactions for users.
+? Temporary segments: Temporary segments are created by the Oracle database when a SQL
+statement needs a temporary work area to complete execution. When the statement finishes
+execution, the temporary segment's extents are returned to the instance for future use. Specify
+either a default temporary tablespace for every user, or a default temporary tablespace that is
+used database-wide.
+Transactions and Undo Data
+When a transaction starts, it is assigned to an undo segment. Throughout the life of the
+transaction, when data is changed, the original (before the change) values are copied into the
+undo segment. You can see which transactions are assigned to which undo segments by checking
+the V$TRANSACTION dynamic performance view.
+Undo segments are specialized segments that are automatically created by the instance as
+needed to support transactions. Like all segments, undo segments are made up of extents, which,
+in turn, consist of data blocks. Undo segments automatically grow and shrink as needed, acting as
+a circular storage buffer for their assigned transactions.
+Transactions fill extents in their undo segments until a transaction is completed or all space is
+consumed. If an extent fills up and more space is needed, the transaction acquires that space
+from the next extent in the segment. After all extents have been consumed, the transaction either
+wraps around back into the first extent or requests a new extent to be allocated to the undo
+segment.
+QUESTION NO: 136
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 84
+You are using flat files as the data source for one of your data warehousing applications. To
+optimize the application performance, you plan to move the data from the flat files to clustered
+tables in an Oracle database. While migrating the data, you want to have minimal impact on the
+database performance and optimize the data load operation. Which method would you use to load
+data into the Oracle database?
+A. Use the external table population.
+B. Use the Oracle Data Pump export and import utility.
+C. Use the conventional path data load of the SQL*Loader utility.
+D. Use the INSERT INTO...SELECT command to load the data.
+Answer: C
+Explanation:
+QUESTION NO: 137
+Given below is a list of scenarios:
+1. A user terminates his session abnormally.
+2. The connection between the server and the client application terminates because of a network
+failure.
+3. A schema is accidentally dropped.
+4. The tablespace is accidentally dropped from the database.
+5. The hard disk gets corrupted and the data files in the disk are lost.
+6. The database instance abnormally shuts down because of power failure.
+Which scenarios require DBA intervention to perform recovery?
+A. 1, 3, and 6
+B. 4, 5, and 6
+C. 3, 4, and 5
+D. 1, 2, and 6
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 85
+QUESTION NO: 138
+Which two statements are true regarding B-tree index? (Choose two.)
+A. The leaf blocks in the index are doubly linked.
+B. The leaf node stores a bitmap for each key value.
+C. The rows with NULL value in key columns also have entries in the index.
+D. The deletion of a row from the table causes a logical deletion in index leaf block and the space
+becomes available for the new leaf entry.
+Answer: A,D
+Explanation:
+B-Tree Index
+Structure of a B-tree Index
+At the top of the index is the root, which contains entries that point to the next level in the index. At
+the next level are branch blocks, which in turn point to blocks at the next level in the index. At the
+lowest level are the leaf nodes, which contain the index entries that point to rows in the table. The
+leaf blocks are doubly linked to facilitate the scanning of the index in an ascending as well as
+descending order of key values.
+Format of Index Leaf Entries
+An index entry has the following components:
+? Entry header: Stores the number of columns and locking information
+? Key column length-value pairs: Define the size of a column in the key followed by the value for
+the column (The number of such pairs is the maximum of the number of columns in the index.)
+? ROWID: Row ID of a row that contains the key values
+B-Tree Index (continued)
+Index Leaf Entry Characteristics
+In a B-tree index on a nonpartitioned table:
+? Key values are repeated if there are multiple rows that have the same key value unless the index
+is compressed
+? There is no index entry corresponding to a row that has all key columns that are NULL.
+Therefore, a WHERE clause specifying NULL always results in a full table scan.
+? A restricted ROWID is used to point to the rows of the table because all rows belong to the same
+segment
+Effect of DML Operations on an Index
+The Oracle server maintains all the indexes when DML operations are carried out on a table. Here
+is an explanation of the effect of a DML command on an index:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 86
+? Insert operations result in the insertion of an index entry in the appropriate block.
+? Deleting a row results only in a logical deletion of the index entry. The space used by the deleted
+row is available for new sequential leaf entries.
+? Updates to the key columns result in a logical delete and an insert to the index. The PCTFREE
+setting has no effect on the index except at the time of creation. A new entry may be added to an
+index block even if it has less space than that specified by PCTFREE.
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+Types of Indexes
+These are several types of index structures that are available depending on your needs. Two of
+the most common are:
+? B-tree index
+- Default index type; in the form of a balanced tree
+? Bitmap index:
+- Has a bitmap for each distinct value indexed
+- Each bit position represents a row that may or may not contain the indexed value.
+- Best for low-cardinality columns
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 87
+QUESTION NO: 139
+In your production database, data manipulation language (DML) operations are executed on the
+SALES table.
+You have noticed some dubious values in the SALES table during the last few days. You are able
+to track users, actions taken, and the time of the action for this particular period but the changes in
+data are not tracked. You decide to keep track of both the old data and new data in the table long
+with the user information.
+What action would you take to achieve this task?
+A. Apply fine-grained auditing.
+B. Implement value-based auditing.
+C. Impose standard database auditing to audit object privileges.
+D. Impose standard database auditing to audit SQL statements.
+Answer: B
+Explanation:
+QUESTION NO: 140
+You are managing an Oracle Database 11g database. The database is open, and you plan to
+perform Recovery Manager (RMAN) backups.
+Which three statements are true about these backups? (Choose three.)
+A. The backups would be consistent.
+B. The backups would be inconsistent.
+C. The backups would be possible only if the database is running in ARCHIVELOG mode.
+D. The backups would be possible only if the database is running in NOARCHIVELOG mode.
+E. The backups need to be restored and the database has to be recovered in case of a media
+failure.
+Answer: B,C,E
+Explanation:
+?Recovery Manager (RMAX): Oracle Tool that provides a complete solution for the backup,
+restoration, and recovery needs of the entire database or of specific database files
+Topic 3, Volume C
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 88
+QUESTION NO: 141
+View the Exhibit and examine the output of the query.
+What do you infer from this?
+A. The SGA_TARGET is a static parameter.
+B. The instance is started, but the database is not yet open.
+C. The server parameter file (SPFILE) was used to start the instance.
+D. The SGA_TARGET parameter does not have any effect on the database instance until the
+SGA_MAX_SIZE parameter is specified.
+Answer: C
+Explanation:
+QUESTION NO: 142
+View the Exhibit and examine the output.
+Which two statements are true regarding the LISTENER2 listener? (Choose two.)
+A. The ORCL instance is registered dynamically with the listener.
+B. The ORCL instance is registered statically in the listener.ora file.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 89
+C. The number of current client connections handled by the service handler is two.
+D. The total number of client connections handled so far by the service handler is two.
+Answer: B,D
+Explanation:
+Database Service Registration
+For a listener to forward client connections to an instance, the listener must know the name of the
+instance and where the instance's ORACLE_HOME is located. The listener can find this
+information in two ways:
+? Dynamic service registration: Oracle8i and later instances automatically register with the default
+listener on database startup. No additional listener configuration is required for the default listener.
+? Static service registration: Earlier releases of the Oracle database do not automatically register
+with the listener and, therefore, require that the listener configuration file contain a list of all
+database services that the listener will serve. You may still choose to use static service registration
+with newer releases if:
+- Your listener is not on the default port of 1521, and you do not want to configure your instance to
+register with a nondefault port
+- Your application requires static service registration
+QUESTION NO: 143
+You plan to implement the distributed database system in your company. You invoke Database
+Configuration Assistant (DBCA) to create a database on the server. During the installation, DBCA
+prompts you to specify the Global Database Name.
+What must this name be made up of?
+A. It must be made up of a database name and a domain name.
+B. It must be made up of the value in ORACLE_SID and HOSTNAME.
+C. It must be made up of the value that you plan to assign for INSTANCE_NAME and
+HOSTNAME.
+D. It must be made up of the value that you plan to assign for ORACLE_SID and
+SERVICE_NAMES.
+Answer: A
+Explanation: Using the DBCA to Create a Database (continued)
+3. Database Identification: Enter the Global Database Name in The form
+database_name.domain_name, and the system identifier (SID). The SID defaults lo the database
+name and uniquely identifies the instance associated with the database.
+4. Management Options: Use this page to set up your database so that it can be managed with
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 90
+Oracle Enterprise Manager. Select the default: "Configure the Database with Enterprise Manager."
+Optionally, this page allows you to configure alert notifications and daily disk backup area settings.
+Note: Yon must configure the listener before you can configure Enterprise Manager (as shown
+earlier).
+QUESTION NO: 144
+User SCOTT wants to perform a bulk insert operation in the EMP_DEP table. SCOTT receives the
+following error after the INSERT statement is issued and few rows are inserted:
+INSERT INTO EMP_DEP (emp_id,name,salary,dep_name,mgr_id)
+*
+ERROR at line 1:
+ORA-01653: unable to extend table SCOTT.EMP_DEP by 128 in tablespace USERS
+Identify two actions either of which will help you resolve this problem. (Choose two.)
+A. Grant the RESOURCE role to SCOTT.
+B. Add data files to the USERS tablespace.
+C. Grant the CREATE ANY TABLE privilege to SCOTT.
+D. Increase the space for SCOTT on the USERS tablespace.
+E. Increase the size of the data file associated with the USERS tablespace.
+Answer: B,E
+Explanation:
+The Oracle docs note this on the ora-01653 error:
+ORA-01653: unable to extend table string.string by string in tablespace string
+Cause: Failed to allocate an extent of the required number of blocks for a table segment in the
+tablespace indicated.
+Action: Use ALTER TABLESPACE ADD DATAFILE statement to add one or more files to the
+tablespace indicated.
+Oracle MOSC Documents offer great resources on resolving ORA-01653, namely the nature of
+the problem as it relates to space availability:
+------------
+This error does not necessarily indicate whether or not you have enough space in the tablespace,
+it merely indicates that Oracle could not find a large enough area of free contiguous space in
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 91
+which to fit the next extent.
+Diagnostic Steps:
+-----------------
+1. In order to see the free space available for a particular tablespace, you must use the view
+DBA_FREE_SPACE. Within this view, each record represents one fragment of space. How the
+view DBA_FREE_SPACE can be used to determine the space available in the database is
+described in Note 121259.1 Using DBA_FREE_SPACE
+Furthermore, MOSC offers these choices in resolving ORA-01653 (as quoted below):
+Manually COALESCE Adjacent Free Extents
+Add a DATAFILE
+Resize DATAFILE
+Enable AUTOEXTEND
+Defragment tablespace
+View temporary segments for space
+QUESTION NO: 145
+Some non-DBA users in your database have been granted ANY TABLE system privileges and
+they are able to access data dictionary base tables. You decide to restrict their access to data
+dictionary objects. Which method would you adopt to achieve this objective?
+A. Revoke the RESOURCE role from the users.
+B. Set the value of the OS_ROLES parameter to TRUE.
+C. Use Database Resource Manager to restrict user access to objects.
+D. Grant ANY TABLE system privileges again without ADMIN OPTION.
+E. Set the value of the O7_DICTIONARY_ACCESSIBILITY parameter to FALSE.
+Answer: E
+Explanation:
+QUESTION NO: 146
+The session of user SCOTT receives the following error after executing an UPDATE command on
+the EMP table:
+ERROR at line 1:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 92
+ORA-00060: deadlock detected while waiting for resource
+On investigation, you find that a session opened by user JIM has a transaction that caused the
+deadlock.
+Which two statements are true regarding the session of SCOTT in this scenario? (Choose two.)
+A. The session is terminated after receiving the error and JIM can continue with his transaction.
+B. SCOTT should perform a COMMIT or ROLLBACK to allow JIM to continue with his transaction.
+C. The session is rolled back after receiving the error and JIM can continue with his transaction.
+D. SCOTT has to reexecute the last command in the transaction after he commits the transaction.
+Answer: B,D
+Explanation:
+QUESTION NO: 147
+Examine the following statement that is used to modify the primary key constraint on the SALES
+table:
+SQL> ALTER TABLE SALES MODIFY CONSTRAINT pk DISABLE VALIDATE;
+Which three statements are true regarding the above command? (Choose three.)
+A. The constraint remains valid.
+B. The index on the constraint is dropped.
+C. It allows the loading of data into the table using SQL *Loader.
+D. New data conforms to the constraint, but existing data is not checked.
+E. It allows the data manipulation on the table using INSERT/UPDATE/DELETE SQL statements.
+Answer: A,B,C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 93
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+Constraint States (continued)
+DISABLE NOVALIDATE: New as well as existing data may not conform to the constraint
+because it is not checked. This is often used when the data is from an already validated source
+and the table is read-only, so no new data is being entered into the table. NOVALIDATE is used in
+data warehousing situations where the data has already been cleaned up. No validation is
+needed, thereby saving time.
+DISABLE VALIDATE: If a constraint is in this state, modification of the constrained columns is not
+allowed because it would be inconsistent to validate the existing data and then allow unchecked
+data to enter the table. This is often used when existing data must be validated but not modified
+and when the index is not otherwise needed for performance.
+ENABLE NOVALIDATE: New data conforms to the constraint, but existing data is in an unknown
+state. This is frequently used when it is known that clean and conforming data exists in the table
+so there is no need for validation. However, new violations are not allowed to enter the system.
+ENABLE VALIDATE: Both new and existing data conform to the constraint. This is the typical and
+default state of a constraint.
+QUESTION NO: 148
+You execute the following command to change the status of the SALES tablespace:
+SQL> ALTER TABLESPACE sales OFFLINE;
+Which statements describe the effect of the command? (Choose all that apply.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 94
+A. The tablespace would require recovery to go back online.
+B. A checkpoint is taken on all data files that are associated with the SALES tablespace.
+C. The sessions that subsequently try to access the objects in the SALES tablespace receivean
+error.
+D. The new status of the SALES tablespace is recorded in the control file when the database
+instance is closed.
+Answer: B,C
+Explanation:
+Altering a Tablespace (continued)
+? Offline: You can take an online tablespace offline so that this portion of the database is
+temporarily unavailable for general use. The rest of the database is open and available for users to
+access data. When you take it offline, you can use the following options:
+- Normal: A tablespace can be taken offline normally if no error conditions exist for any of the data
+files of the tablespace. Oracle Database ensures that all data is written to disk by taking a
+checkpoint for all data files of the tablespace as it Takes Them offline.
+- Temporary: A tablespace can be taken offline temporarily even if there are error conditions for
+one or more files of the tablespace. Oracle Database takes the data files (which are not already
+offline) offline, performing checkpointing on them as it does so. If no files are offline, but you use
+the Temporary clause, media recovery is not required to bring the tablespace back online.
+However, if one or more files of the tablespace are offline because of write errors, and you take
+the tablespace offline temporarily, the tablespace requires recovery before you can bring it back
+online.
+- Immediate: A tablespace can be taken offline immediately without Oracle Database taking a
+checkpoint on any of the data files. When yon specify Immediate, media recovery for the
+tablespace is required before the tablespace can be brought online. You cannot take a tablespace
+offline immediately if the database is running in NOARCHIVELOG mode.
+- For Recover: The FOR RECOVER setting has been deprecated. The syntax is supported for
+backward compatibility.
+QUESTION NO: 149
+Identify the two situations in which you use the alert log file in your database to check the details.
+(Choose two.)
+A. Running a query on a table returns "ORA-600: Internal Error."
+B. Inserting a value in a table returns "ORA-01722: invalid number."
+C. Creating a table returns "ORA-00955: name is already used by an existing object."
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 95
+D. Inserting a value in a table returns "ORA-00001: unique constraint (SYS.PK_TECHP) violated."
+E. Inserting a row in a table returns "ORA-00060: deadlock detected while waiting for resource."
+Answer: A,E
+Explanation:
+QUESTION NO: 150
+Which three statements are correct about temporary tables? (Choose three.)
+A. Indexes and views can be created on temporary tables.
+B. Both the data and the structure of temporary tables can be exported.
+C. Temporary tables are always created in a user's temporary tablespace.
+D. The data inserted into a temporary table in a session is available to other sessions.
+E. Data manipulation language (DML) locks are never acquired on the data of temporary tables.
+Answer: A,C,E
+Explanation:
+QUESTION NO: 151
+You are working on a database that must be functioning 24 hours a day, 7 days a week. The
+database is configured in ARCHIVELOG mode.
+Which two options do you have for performing user-managed backups? (Choose two.)
+A. You can perform consistent backups only.
+B. You can perform a complete database backup without shutting down the database instance.
+C. You can back up data files only when all data files have the same SCN recorded in the control
+file.
+D. You can back up only those data files whose headers are frozen by using ALTER
+TABLESPACE BEGIN BACKUP or ALTER DATABASE BEGIN BACKUP commands.
+Answer: B,D
+Explanation:
+QUESTION NO: 152
+You have set Tablespace Full Metrics Threshold values for the USERS tablespace as follows:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 96
+Warning (%): 90
+Critical (%): 95
+Which background process is responsible for issuing alerts when the threshold is crossed?
+A. System monitor (SMON)
+B. Process monitor (PMON)
+C. Memory manager process (MMAN)
+D. Manageability Monitor process (MMON)
+Answer: D
+Explanation:
+QUESTION NO: 153
+User SCOTT executes the following command on the EMP table but has not issued COMMIT,
+ROLLBACK, or any data definition language (DDL) command:
+SQL> SELECT ename FROM emp
+2 WHERE job='CLERK' FOR UPDATE OF empno;
+SCOTT has opened another session to work with the database instance.
+Which three operations would wait when issued in SCOTT's second session? (Choose three.)
+A. LOCK TABLE emp IN SHARE MODE;
+B. LOCK TABLE emp IN EXCLUSIVE MODE;
+C. UPDATE emp SET sal=sal*1.2 WHERE job='MANAGER'
+D. INSERT INTO emp(empno,ename) VALUES (1289,'Harry');
+E. SELECT ename FROM emp WHERE job='CLERK' FOR UPDATE OF empno;
+Answer: A,B,E
+Explanation:
+QUESTION NO: 154
+Which three statements are true about logical structures of the Oracle database? (Choose three.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 97
+A. Each segment contains one or more extents.
+B. Multiple tablespaces can share a single data file.
+C. A data block is the smallest unit of input/output (I/O) in data files.
+D. It is possible to have tablespaces of different block sizes in a database.
+E. Each data block in the database always corresponds to one operating system block.
+Answer: A,C,D
+Explanation:
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+QUESTION NO: 155
+You are managing an Oracle Database 11g database. You configured the database to run in
+ARCHIVELOG mode.
+Which two statements are true in this scenario? (Choose two.)
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 98
+A. You must shut down the database instance to perform the backups.
+B. You must configure the Flash Recovery Area (FRA) for the database.
+C. You can perform complete database backups without closing the database.
+D. All the previous closed database backups including control files become invalid afteryou
+configure the database to ARCHIVELOG mode.
+Answer: C,D
+Explanation:
+QUESTION NO: 156
+Which two statements are true regarding listeners? (Choose two.)
+A. Listeners use only the TCP/IP protocol.
+B. Multiple listener processes can run simultaneously on a host.
+C. Multiple database instances can be registered with a single listener.
+D. The listener-related errors can be traced only at the administrative level.
+E. Only one database instance can be registered with a single listener at any time.
+Answer: B,C
+Explanation:
+QUESTION NO: 157
+View the Exhibit to examine the output of the DBA_OUTSTANDING_ALERTS view.
+After 30 minutes, you executed the following command:
+What could be the reason for the elimination of the other rows in the output?
+Exhibit:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 99
+A. An Automatic Workload Repository snapshot has been taken recently.
+B. The non-threshold-based alerts are transferred to DBA_ALERT_HISTORY.
+C. The threshold alerts conditions are cleared and the alerts are transferred to
+BA_ALERT_HISTORY.
+D. The threshold alerts related to database metrics are permanently stored in
+DBA_ALERT_HISTORY but not the threshold alerts related to instance metrics.
+Answer: C
+Explanation:
+Alert Types and Clearing Alerts
+There are two kinds of server-generated alerts: threshold and nonthreshold.
+Most server-generated alerts are configured by setting a warning and critical threshold values on
+database metrics. You can define thresholds for more than 120 metrics, including the following:
+? Physical Reads Per Sec
+? User Commits Per Sec
+? SQL Service Response Time
+Except for the Tablespace Space Usage metric, which is database related, the other metrics are
+instance related. Threshold alerts are also referred to as stateful alerts, which are automatically
+cleared when an alert condition clears. Stateful alerts appear in DBA_OUTSTANDING_ALERTS
+and. when cleared, go to DBA_ALERT_HISTORY.
+Other server-generated alerts correspond to specific database events such as ORA- * errors,
+"Snapshot too old" errors, Recovery Area Low On Free Space, and Resumable Session
+Suspended. These are non-threshold-based alerts, also referred to as stateless alerts. Stateless
+alerts go directly to the history table. Clearing a stateless alert makes sense only in the Database
+Control environment because Database Control stores stateless alerts in its own repository.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 100
+QUESTION NO: 158
+You have two database servers SEMP and SACCT. The database in the SEMP server maintains
+the employee information and the database in the SACCT server maintains the accounts payable
+information. The employees submit the expense reports to the accounts payable department. A
+user of the accounts payable database wants to extract the employee information from the
+database in the SEMP server for crossverification.
+Which schema object enables the user to access the information from the remote database?
+A. Cluster
+B. Database link
+C. Mapping table
+D. Materialized view
+Answer: B
+Explanation:
+QUESTION NO: 159
+In a new installation of Oracle Database 11g, you perform these activities:
+1. Organize software and data on different subdirectories to avoid poor performance.
+2. Use consistent naming conventions for database files.
+3. Separate administrative information pertaining to the database in different directories.
+Which option corresponds to the type of activities you performed?
+A. Oracle Managed Files
+B. Oracle Grid Architecture
+C. Optimal Flexible Architecture
+D. Oracle database architecture
+E. Automatic Storage Management
+Answer: C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 101
+Optimal Flexible Architecture (OFA)
+OFA is designed to:
+? Organize large amounts of software
+? Facilitate routine administrative tasks
+? Facilitate switching between multiple Oracle databases
+? Manage and administer database growth
+Optimal Flexible Architecture (OFA)
+OFA is a method for configuring the Oracle database and other databases. OFA takes advantage
+of the capabilities of the OS and disk subsystems to create an easy-to-administer configuration
+that allows maximum flexibility for growing and high-performance databases. The methods
+described here are the basics of OFA.
+OFA is designed to:
+? Organize large amounts of complicated software and data on the disk to avoid device
+bottlenecks and poor performance
+? Facilitate routine administrative tasks (such as software and data backup) that are often
+vulnerable to data corruption
+? Facilitate switching between multiple Oracle databases
+? Manage and administer database growth
+? Help eliminate fragmentation of free space in the data dictionary, isolate other fragmentation, and
+minimize resource contention
+For details about the goals and implementation of OFA, see the Oracle Installation Guide for your
+platform.
+QUESTION NO: 160
+You configured the Flash Recovery Area (FRA) for your database. The database instance is
+running in ARCHIVELOG mode. The default location for the archived redo log files is the Flash
+Recovery Area. Which two files are removed automatically if the space is required in the FRA as
+per the retention policy? (Choose two.)
+A. Flashback log files
+B. Backups that have become obsolete
+C. User managed backups of the data files and control files
+D. Archived redo log files that have multiple copies in a different archive location and not backed
+up
+Answer: A,B
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 102
+Explanation:
+Configuring the Flash Recovery Area
+Flash recovery area:
+? Strongly recommended for simplified backup storage management
+? Space on disk (separate from working database files)
+? Location specified by the DB_RECOVERY_FILE_DEST parameter
+? Size specified by DB_RECOVERY_FILE_DEST parameter
+? Large enough for backups, archived logs, flashback logs, mirrored control files, and mirrored
+redo logs
+? Automatically managed according to your retention policy
+Configuring the flash recovery area means determining location, size, and retention policy.
+Configuring the Flash Recovery Area
+The flash recovery area is a space that is set aside on the disk to contain archived logs, backups,
+flashback logs, mirrored control files, and mirrored redo logs. A flash recovery area simplifies
+backup storage management and is strongly recommended. You should place the flash recovery
+area on a disk that is separate from die working set of database files. Otherwise, the disk becomes
+a single point of failure for your database.
+The amount of disk space to allocate for the flash recovery area depends on the size and activity
+levels of your database. As a general rule, the larger the flash recovery area, the more useful it is.
+Ideally, the flash recovery area should be large enough for copies of your data and control files
+and for flashback, online redo, and archived logs needed to recover the database with the
+backups kept based on the retention policy. (In short, the flash recovery area should be at least
+twice the size of the database so that it can hold one backup and several archived logs.)
+Space management in the flash recovery area is governed by a backup retention policy. A
+retention policy determines when files are obsolete, winch means that they are no longer needed
+to meet your data recovery objectives. The Oracle database automatically manages this storage
+by deleting files that are no longer needed.
+QUESTION NO: 161
+All the database users are presently connected to the database instance and working. The HR
+user has opened three database sessions and executed the following command in one of his
+sessions:
+SQL> UPDATE persons SET ccode='U031' WHERE ccode='U029';
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 103
+123 rows updated.
+SQL> DELETE FROM persons WHERE exp='Y';
+3 rows deleted.
+The SYS user opens a new session after HR executed the above commands.
+Which sessions can see the effect of the UPDATE and DELETE commands?
+A. All sessions of the HR user only
+B. All sessions of the HR user and the SYS user
+C. The session of the HR user that executed the commands
+D. All the sessions for which the database users have access privilege to the PERSONS table
+Answer: C
+Explanation:
+QUESTION NO: 162
+View the Exhibit and examine the attributes of an undo tablespace. In an OLTP system, the user
+SCOTT has started a query on a large table in the peak transactional hour that performs bulk
+inserts. The query runs for more than 15 minutes and then SCOTT receives the following error:
+ORA-01555: snapshot too old
+What could be the reason for this error?
+Exhibit:
+A. The query is unable to get a read-consistent image.
+B. There is not enough space in Flash Recovery Area.
+C. There is not enough free space in the flashback archive.
+D. The query is unable to place data blocks in undo tablespace.
+Answer: A
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 104
+Explanation:
+The ORA-01555 is caused by Oracle read consistency mechanism. If you have a long running
+SQL that starts at 10:30 AM, Oracle ensures that all rows are as they appeared at 10:30 AM, even
+if the query runs until noon! Oracles does this by reading the "before image" of changed rows from
+the online undo segments. If you have lots of updates, long running SQL and too small UNDO, the
+ORA-01555 error will appear.
+QUESTION NO: 163
+The user HR receives the following error while inserting data into the TTK table:
+ERROR at line 1:
+ORA-01653: unable to extend table HR.TTK by 128 in tablespace SMD
+Upon investigation, you find that SMD is a small file tablespace.
+Which three action would allow the user to insert data? (Choose three.)
+A. Add a data file to the SMD tablespace.
+B. Add a data file to the temporary tablespace associated with the user HR.
+C. Resize the data file associated with the SMD tablespace to make it larger.
+D. Alter the data file associated with the SMD tablespace to grow automatically.
+E. Change the segment space management for the SMD tablespace to automatic.
+Answer: A,C,D
+Explanation:
+The Oracle docs note this on the ora-01653 error:
+ORA-01653: unable to extend table string.string by string in tablespace string
+Cause: Failed to allocate an extent of the required number of blocks for a table segment in the
+tablespace indicated.
+Action: Use ALTER TABLESPACE ADD DATAFILE statement to add one or more files to the
+tablespace indicated.
+Oracle MOSC Documents offer great resources on resolving ORA-01653, namely the nature of
+the problem as it relates to space availability:
+------------
+This error does not necessarily indicate whether or not you have enough space in the tablespace,
+it merely indicates that Oracle could not find a large enough area of free contiguous space in
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 105
+which to fit the next extent.
+Diagnostic Steps:
+-----------------
+1. In order to see the free space available for a particular tablespace, you must use the view
+DBA_FREE_SPACE. Within this view, each record represents one fragment of space. How the
+view DBA_FREE_SPACE can be used to determine the space available in the database is
+described in Note 121259.1 Using DBA_FREE_SPACE
+Furthermore, MOSC offers these choices in resolving ORA-01653 (as quoted below):
+Manually COALESCE Adjacent Free Extents
+Add a DATAFILE
+Resize DATAFILE
+Enable AUTOEXTEND
+Defragment tablespace
+View temporary segments for space
+QUESTION NO: 164
+Which two statements are true about checkpointing? (Choose two.)
+A. The checkpoint frequency decreases with the smaller redo log file size.
+B. It ensures that all committed data is written to the data files during normal shutdown.
+C. The frequent full checkpoint in a database can cause the overall degradation of the database
+performance.
+D. It prompts the Checkpoint (CKPT) process to write data to the data files and redo information to
+the online redo log files.
+Answer: B,C
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 106
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+Checkpoint Process (CKPT)
+A checkpoint is a data structure that defines a system change number (SCN) in the redo thread of
+a database. Checkpoints are recorded in the control file and in each data file header. They are a
+crucia element of recovery.
+When a checkpoint occurs, Oracle Database must update the headers of all data files to record
+the details of the checkpoint. This is done by the CKPT process. The CKPT process does not write
+blocks to disk; DBWw always performs that work. The SCNs recorded in the file headers
+guarantee that all changes made to database blocks prior to that SCN have been written to disk.
+The statistic DDWR checkpoints displayed by the SYSTEM_STATISTICS monitor in Oracle
+Enterprise Manager indicate the number of checkpoint requests that have completed.
+QUESTION NO: 165
+Which two statements are true regarding the Oracle Data Pump export and import operations?
+(Choose two.)
+A. You cannot export data from a remote database.
+B. You can rename tables during an import operation.
+C. You can overwrite existing dump files during an export operation.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 107
+D. You can compress the data during export but not the metadata because it is not supported.
+Answer: B,C
+Explanation:
+? Data Pump: Enables the high-speed transfer of data from one database to another (For example,
+you may want to export a table and import it into another database.)
+Oracle Data Pump: Benefits
+The EXCLUDE, INCLUDE, and CONTENT parameters are used for fine-grained object and data
+selection.
+You can specify die database version for objects to be moved (using the VERSION parameter) to
+create a dump file set that is compatible with a previous release of the Oracle database that
+supports Data Pump.
+You can use the PARALLEL parameter to specify the maximum number of threads of active
+execution servers operating on behalf of the export job.
+You can estimate how much space an export job would consume (without actually performing the
+export) by using the ESTIMATE_ONLY parameter.
+Network mode enables you to export from a remote database directly to a dump file set. This can
+be done by using a database link to the source system.
+During import, you can change the target data file name, scheme, and tablespace.
+In addition you can specify a percentage of data to be sampled and unloaded from the source
+database when performing a Data Pump export. This can be done by specifying the SAMPLE
+parameter.
+You can use the COMPRESSION parameter to indicate whether the metadata should be
+compressed in the export dump file so that it consumes less disk space. If you compress the
+metadata, it is automatically uncompressed during import.
+QUESTION NO: 166
+View the Exhibit.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 108
+You are creating an additional database by using the Database Configuration Assistant (DBCA).
+You opted to create a General Purpose database and during the database creation realize that the
+Block Size field is not enabled.
+What could be the reason for this?
+A. You have chosen the File System option as the storage option.
+B. You have chosen the Automatic Storage Management (ASM) as the storage option.
+C. The data block size can be increased only when DBCA is invoked from Oracle Universal
+Installer (OUI).
+D. You are using General Purpose template and not the Custom Database template to create the
+database.
+Answer: D
+Explanation:
+Using the DBCA to Create a Database
+The DBCA provides several options to allow you to create a database to meet your needs. The
+DBCA provides a series of pages where you enter configuration information. On most pages, the
+DBCA provides default settings that you can accept if they apply. The steps involved in creating a
+database using the DBCA are as follows:
+1. Operations: Select "Create a Database."
+2. Database Templates: Select the type of database template to be used in creating the database.
+There are two database templates (Data Warehouse and General Purpose and Transaction
+Processing) that copy a preconfigured database, including the data files. These data files include
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 109
+control files, redo log files, and data files for various included tablespaces. Click Show Details to
+see the configuration for each type of database.
+For more complex environments, you may want to select the Custom Database option.
+QUESTION NO: 167
+Your database is functional with a peak load for the last one hour. You want to preserve the
+performance statistics collected during this period to be used for comparison when you analyze
+the performance of the database in the future.
+What action would you take to achieve this task?
+A. Insert finding directives for ADDM tasks in the future.
+B. Create a baseline on a pair of snapshots spanning the peak-load period.
+C. Decrease the snapshot interval in the AWR to collect more snapshots during the peakload
+period.
+D. Set the snapshot retention period in the Automatic Workload Repository (AWR) to zero to avoid
+automatic purging of snapshots.
+Answer: B
+Explanation:
+Database Maintenance
+Proactive database maintenance is made easy by the sophisticated infrastructure of the Oracle
+database, including the following main elements:
+? The Automatic Workload Repository (AWR) is a built-in repository in each Oracle database. At
+regular intervals, the Oracle database makes a snapshot of all its vital statistics and workload
+information and stores this data in the AWR. The captured data can be analyzed by you, by the
+database itself, or by both.
+? Using automated tasks, the database performs routine maintenance operations such as regular
+backups, refreshing optimizer statistics, and database health checks.
+Reactive database maintenance includes critical errors and conditions discovered by database
+health checkers:
+? For problems that cannot be resolved automatically and require administrators to be notified
+(such as running out of space), the Oracle database provides server-generated alerts. The Oracle
+database by default monitors itself and sends out alerts to notify you of problems. The alerts notify
+you and often also provide recommendations on how to resolve reported problem.
+? Recommendations are generated from a number of advisors, each of which is responsible for a
+subsystem. For example, there are memory, segment, and SQL advisors.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 110
+QUESTION NO: 168
+Which of these is true about undo tablespace?
+A. Undo tablespace is a temporary tablespace
+B. Undo tablespace has only one datafile
+C. Undotablespace has a datafile which is reused in cyclic manner
+Answer: A
+Explanation:
+QUESTION NO: 169
+Your database is in shutdown state. What will happend if you issue next command:
+SQL> startup
+A. instance will started
+B. instance started and DB is mounted
+C. instance started, DB opened and finally mounted
+D. instance started, DB mounted and finally opened
+Answer: D
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 111
+C:\Documents and Settings\RraAsShHiIdD\Desktop\untitled.JPG
+QUESTION NO: 170
+Which two statements are true about standard database auditing? (Choose two.)
+A. DDL statements can be audited.
+B. Statements that refer to standalone procedure can be audited.
+C. Operations by the users logged on as SYSDBA cannot be audited.
+D. Only one audit record is ever created for a session per audited statement even though it is
+executed more than once.
+Answer: A,B
+Explanation:
+QUESTION NO: 171
+A database user SMITH tries to query the V$SESSION view and fails to access it as follows:
+Which are the two possible solutions to enable SMITH to query the data in V$SESSION? (Choose
+two.)
+A. granting SELECT privilege to SMITH on V$SESSION
+B. granting SELECT privilege to SMITH on V_$SESSION
+C. asking the user SMITH to run the catalog.sql script
+D. granting SELECT privilege to SMITH on V$FIXED_TABLES
+E. setting the O7_DICTIONARY_ACCESSIBILITY parameter to TRUE
+F. creating a view based on V$SESSION and granting SELECT privilege to SMITH on the view
+that was created
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 112
+Answer: B,F
+Explanation:
+QUESTION NO: 172
+View Exhibit1 and Exhibit2 to examine the current memory allocation and parameter settings,
+respectively. Why are advisors not available for the shared pool and the buffer cache?
+09 (exhibit):
+10 (exhibit):
+A. because the DB_CACHE_ADVICE parameter is set to OFF
+B. because Automatic Memory Management (AMM) is disabled for the database instance
+C. because Automatic Shared Memory Management (ASMM) is enabled for the database instance
+D. because the values for the DB_CACHE_SIZE and SHARED_POOL_SIZE parameters were not
+set initially
+Answer: C
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 113
+Explanation:
+QUESTION NO: 173
+You receive complaints from users regarding the high waiting time for their transactions. On
+investigation, you find that some users are not committing their transactions though they are not
+performing any activity for a long time. As a result, SQL statements need to wait for rowlevel locks.
+Which two actions could you take to prevent this locking problem in the future? (Choose two.)
+A. Decrease the IDLE_TIME resource limit in the profile assigned to the blocking users.
+B. Use Database Resource Manager to automatically log out sessions that block others and are
+idle
+C. Set the limit in the profile of blocking users to control the number of blocks to be accessed in a
+session.
+D. Decrease the maximum number of interested transaction list (ITL) slots for the segments on
+which the blocking user performs the transaction.
+Answer: A,B
+Explanation:
+QUESTION NO: 174
+Your database instance is functional for the past one month. The Automatic Workload Repository
+(AWR) snapshot retention is set to 7 and the STATISTICS_LEVEL initialization parameter is set to
+TYPICAL. You receive a complaint about the poor performance of the database between 7 PM
+and 9 PM of the previous day. Choose two actions any of which can be referred to first to
+diagnose the problem. (Choose two.)
+A. Use the Active Session History report.
+B. Use the AWR Compare Periods report.
+C. Use an ADDM analysis between 7 PM and 9 PM of the previous day.
+D. Use the AWR Compare Period report between 7 PM and 9 PM of the previous day.
+Answer: B,C
+Explanation:
+QUESTION NO: 175
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 114
+View the Exhibit and examine the PL/SQL package and procedure. You made changes to the
+COMPUTE_TAX function inside the EMP_ADMIN package body. Which statement is true after
+you recompile the EMP_ADMIN package body?
+Exhibit:
+A. The USE_P procedure remains valid.
+B. The USE_P procedure becomes invalid.
+C. The SHOW_DETAIL procedure becomes invalid.
+D. The EMP_ADMIN package specification becomes invalid and needs to be recompiled.
+Answer: A
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 115
+QUESTION NO: 176
+Which two statements are true about the Automatic Workload Repository (AWR)? (Choose two.)
+A. All AWR tables belong to the SYSTEM schema
+B. The AWR contains systemwide tracing and logging information
+C. The snapshots collected by the AWR are accessible through data dictionary views
+D. The snapshots collected by the AWR are used by self-tuning components in the database
+Answer: C,D
+Explanation:
+QUESTION NO: 177
+The user SCOTT owns the CUST table that is placed in the SALES tablespace. The user SCOTT
+opens a session and executes commands as follows:
+SQL> INSERT INTO cust VALUES(101, 'JACK');
+1 row created.
+SQL> INSERT INTO cust VALUES(102, 'SMITH');
+1 row created.
+As a DBA, you execute the following command from another session:
+ALTER TABLESPACE sales READ ONLY;
+Which statement is true regarding the effect of this command on the transaction in Scott's
+session?
+A. The command fails as a transaction is still pending.
+B. The transaction in Scott's session is rolled back and the tablespace becomes readonly.
+C. The command waits and the user SCOTT can execute data manipulation language (DML)
+statements only as part of the current transaction.
+D. The command hangs until all transactions on the objects in the tablespace commit or rollback,
+and then the tablespace is placed in readonly mode.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 116
+Answer: D
+Explanation:
+QUESTION NO: 178
+Identify three situations in which you would NOT be able to drop a tablespace. (Choose three.)
+A. when the tablespace is online
+B. when the tablespace has segments with data in it
+C. when the tablespace is a default permanent tablespace for the database
+D. when the tablespace contains a table that is currently being used by transactions
+E. when the tablespace contains undo data that is needed to rollback an uncommitted transaction
+Answer: C,D,E
+Explanation:
+QUESTION NO: 179
+View the Exhibit. What would happen if Oracle Home is not empty?
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 117
+A. The installation will not be continued until the location is empty.
+B. The installation will proceed without overwriting the existing files.
+C. The installation can be continued, but the existing files will be overwritten.
+D. The installation terminates automatically after showing an error message.
+Answer: A
+Explanation:
+QUESTION NO: 180
+You plan to configure the new Oracle Database 11g installation by performing these tasks:
+- Use Automatic Storage Management (ASM) as the storage option.
+- Use Oracle Enterprise Manager Database Control to manage the database.
+- Provide the same password for SYS, SYSTEM, SYSMAN, and DBSNMP accounts during the
+installation.
+- Configure the database to send email notifications.
+Some tools available to you for installation are:
+1: Oracle Universal Installer (OUI)
+2: Database Configuration Assistant (DBCA)
+3: Database Upgrade Assistant (DBUA)
+4: Oracle Net Configuration Assistant
+Which tools would you use for this installation?
+A. 2
+B. 3
+C. 1 and 2
+D. 3 and 4
+E. 1,2 and 4
+Answer: E
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 118
+QUESTION NO: 181
+Which three descriptions are correct about the effects of the TRUNCATE command on a table?
+(Choose three.)
+A. The corresponding indexes for the table are also truncated.
+B. Delete triggers on the table are fired during the execution of the TRUNCATE command.
+C. The child table is truncated when the TRUNCATE command is applied on the parent table.
+D. The highwater mark (HWM) is set to point to the first usable data block in the table segment.
+E. No undo or very little undo data is generated during the execution of the TRUNCATE
+command.
+Answer: A,D,E
+Explanation:
+QUESTION NO: 182
+The tnsnames.ora file has an entry for the service alias ORCL as follows:
+ORCL =
+( DESCRIPTION =
+(ADDRESS = (PROTOCOL = TCP)(HOST = 10.156.24.216)(PORT = 1521))
+(CONNECT_DATA =
+(SERVER = DEDICATED)
+(SERVICE_NAME = orcl.oracle.com)
+)
+)
+The TNSPING command executes successfully when tested with ORCL, but you are not able to
+connect to the database instance with the following command:
+SQL> CONNECT scott/tiger@orcl
+What could be the reason for this?
+A. The listener is not running on the database node.
+B. The TNS_ADMIN environmental variable is set to a wrong value.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 119
+C. The orcl.oracle.com database service is not registered with the listener.
+D. The DEFAULT_DOMAIN parameter is set to a wrong value in the sqlnet.ora file.
+Answer: C
+Explanation:
+QUESTION NO: 183
+You suspect unauthorized data manipulation language (DML) operations on a particular table. You
+want to track users who are performing the transactions and the values used in the transactions.
+You also plan to transfer these values to another table for analysis. How would you achieve this?
+A. by using triggers
+B. by using Data Pump
+C. by using external tables
+D. by using anonymous PL/SQL blocks
+Answer: A
+Explanation:
+QUESTION NO: 184
+You execute a command to resize a data file, sales.dbf, of size 200 MB in your database:
+ALTER DATABASE DATAFILE '/remorse/sales.dbf' RESIZE 150M;
+Which statement is true about this command?
+A. The command must be issued in MOUNT state.
+B. The command succeeds only if the data file is offline.
+C. The command must be issued when the database is in the archivelog mode.
+D. The command succeeds if no extent in the tablespace is currently allocated above the 150 MB
+boundary of the file.
+Answer: D
+Explanation:
+QUESTION NO: 185
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 120
+You executed the following commands to find the location of the alert log file:
+Where is the alert log file stored? (Choose all that apply.)
+A. in the BACKGROUND_DUMP_DEST location; in text format
+B. in the BACKGROUND_DUMP_DEST location; in XML format
+C. in the BACKGROUND_DUMP_DEST location; in both text and XML format
+D. in the DIAGNOSTIC_DEST/diag/rdbms/orcl/orcl/alert directory; in text format
+E. in the DIAGNOSTIC_DEST/diag/rdbms/orcl/orcl/alert directory; in XML format
+F. in the DIAGNOSTIC_DEST/diag/rdbms/orcl/orcl/alert directory; in both text and XML format
+Answer: A,E
+Explanation:
+QUESTION NO: 186
+View the Exhibits and examine lock waits. Users HR and SH complain that their transactions on
+one of the application tables, EMP, are waiting for response.
+Which action would you take to release the lock and enable users HR and SH to continue with
+their transactions?
+07 (exhibit):
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 121
+08 (exhibit):
+A. Kill the session of the user SCOTT with session ID118.
+B. Issue manual checkpoint using the ALTER SYSTEM command.
+C. Modify the profile used by user SCOTT to reduce the CONNECT_TIME limit.
+D. Flush the Shared Pool to remove the SQL statement causing "wait" in memory.
+Answer: A
+Explanation:
+QUESTION NO: 187
+You created a profile APP_USER and assigned it to the users. After a month, you decide to drop
+the profile. Some user sessions are currently connected to the database instance and are using
+the APP_USER profile.
+This command is used to drop the profile:
+SQL> DROP PROFILE app_user;
+Which statement describes the result?
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 122
+A. The command produces an error.
+B. The profile is dropped and current user sessions use the DEFAULT profile immediately.
+C. The profile is dropped and only the subsequent user sessions use the DEFAULT profile.
+D. The profile is dropped, the sessions are terminated, and the subsequent user sessions use the
+DEFAULT profile.
+Answer: A
+Explanation:
+QUESTION NO: 188
+Note the functionalities of various background processes:
+1: Perform recovery at instance startup.
+2: Free the resources used by a user process when it fails.
+3: Cleanup the database buffer cache when a process fails.
+4: Dynamically register database services with listeners.
+5: Monitor sessions for idle session timeout.
+6: Cleanup unused temporary segments.
+7: Record the checkpoint information in control file.
+Which option has the correct functionalities listed for a background process?
+A. Checkpoint (CKPT): 1, 2, 5
+B. System Monitor (SMON): 1, 6
+C. Process Monitor (PMON): 4, 6, 7
+D. Database Writer (DBWR): 1, 3, 4
+Answer: B
+Explanation:
+QUESTION NO: 189
+Identify the logical structure that will never have more than one data segment created for it.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 123
+A. external table
+B. partitioned table
+C. partitioned index
+D. nonclustered table
+E. global temporary table
+Answer: D
+Explanation:
+QUESTION NO: 190
+View the Exhibit and examine the command used to create the ZONEDATA table. The table
+contains a million rows for zonewise analysis in the DSS system. DML operations are performed
+very rarely on the table. You decide to prepare an index on the ZONE column to enhance the
+performance of the queries on the ZONE column.
+Which type of index would you select in this scenario?
+Exhibit:
+A. Bitmap index
+B. Reverse key index
+C. Normal BTree index
+D. Functionbased index
+Answer: A
+Explanation:
+QUESTION NO: 191
+The user HR owns the EMP table. The user HR grants privileges to the user SCOTT by using this
+command:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 124
+Which statement is true after HR issues the REVOKE command?
+A. The command fails because SCOTT still has privileges.
+B. The command succeeds and privileges are revoked from JIM.
+C. The command fails because HR cannot revoke the privileges from JIM.
+D. The command succeeds and only HR has the privilege to perform the SELECT, INSERT, and
+UPDATE operations on the EMP table.
+Answer: C
+Explanation:
+QUESTION NO: 192
+Which statement describes the effect on an index, when the indexed column for the rows is
+updated in the base table?
+A. An update in a leaf row takes place.
+B. The index becomes invalid after the update.
+C. The leaf block containing the row to be updated is marked as invalid.
+D. A row in the leaf block of the index for the key value is logically deleted and a new leaf row is
+inserted.
+Answer: D
+Explanation:
+QUESTION NO: 193
+You are managing an Oracle Database 11g database running in ARCHIVELOG mode. The Flash
+Recovery Area is specified as the destination for the archived redo log files. You notice this
+warning in the alert log file:
+ORA19815: WARNING: db_recovery_file_dest_size of 3221225472 bytes is 100.00% used, and
+has 0 remaining bytes available.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 125
+What would you do to reclaim the used space in the Flash Recovery Area? (Choose two.)
+A. Back up the Flash Recovery Area.
+B. Decrease the retention time for the database backup and flashback log files.
+C. Manually delete all the archived log files from the Flash Recovery Area by using operating
+system (OS) commands.
+D. Manually delete all the expired backup sets from the Flash Recovery Area by using operating
+system (OS) commands.
+Answer: A,B
+Explanation:
+QUESTION NO: 194
+View the Exhibit and examine the setting for a table.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 126
+Which statement is true about the PCTFREE setting for the table?
+A. It sets the minimum percentage of a data block to be reserved to contain chained rows from
+other blocks.
+B. It sets the minimum percentage of a data block to be reserved as free space before the server
+prevents inserts into the block.
+C. It sets the minimum percentage of a data block to be reserved to contain the bitmap used to
+maintain the free block information.
+D. It sets the minimum percentage of a block that can be used for row data plus overhead before
+new rows are added to the block.
+Answer: B
+Explanation:
+QUESTION NO: 195
+Which tablespaces are mandatory in an Oracle database for it to be operational? (Choose all that
+apply.)
+A. Undo tablespace
+B. USERS tablespace
+C. SYSAUX tablespace
+D. SYSTEM tablespace
+E. Temporary tablespace
+Answer: C,D
+Explanation:
+QUESTION NO: 196
+You executed the following commands in an RMAN session for your database instance that has
+failures:
+RMAN> LIST FAILURE;
+After some time, you executed the following command in the same session:
+RMAN> ADVISE FAILURE;
+But there are new failures recorded in the Automatic Diagnostic Repository (ADR) after the
+execution of the last LIST FAILURE command. Which statement is true for the above ADVISE
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 127
+FAILURE command in this scenario?
+A. It produces a warning for new failures before advising for CRITICAL and HIGH failures.
+B. It ignores new failures and considers the failures listed in the last LIST FAILURE command
+only.
+C. It produces advice only for new failures and the failures listed in the last LIST FAILURE
+command are ignored.
+D. It produces an error with recommendation to run the LIST FAILURE command before the
+ADVISE FAILURE command.
+Answer: A
+Explanation:
+QUESTION NO: 197
+View the Exhibit and examine the initialization parameter settings.
+Which three initialization parameters are to be set manually as they are not automatically tuned?
+(Choose three.)
+A. LOG_BUFFER
+B. SORT_AREA_SIZE
+C. JAVA_POOL_SIZE
+D. STREAMS_POOL_SIZE
+E. DB_16K_CACHE_SIZE
+F. DB_KEEP_CACHE_SIZE
+Answer: A,E,F
+Explanation:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 128
+QUESTION NO: 198
+In your database, the current status of a PL/SQL procedure has become INVALID. Which action
+would fix the problem and make the PL/SQL procedure usable?
+A. Recompile the PL/SQL procedure.
+B. Modify the procedure to run with a definer's right.
+C. Modify the procedure to run with an invoker's right.
+D. Grant the EXECUTE privilege on the PL/SQL procedure to PUBLIC.
+Answer: A
+Explanation:
+QUESTION NO: 199
+The database is running in ARCHIVELOG mode. Examine the initialization parameters and their
+values set to enable archiving on your database server:
+Which statement is true regarding the archived redo log files?
+A. It will be created on the local file system.
+B. It will be created only in the Flash Recovery Area.
+C. It will be created in the location specified by the LOG_ARCHIVE_DEST_1 parameter and the
+default location $ORACLE_HOME/dbs.
+D. It will be created in the location specified by the LOG_ARCHIVE_DEST_1 parameter and
+location specified by the DB_RECOVERY_FILE_DEST parameter.
+Answer: A
+Explanation:
+QUESTION NO: 200
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 129
+In which situations does the Oracle Data Pump use external tables and not the direct path load
+while exporting a table? (Choose all that apply.)
+A. if a table is not in a cluster
+B. if a table has an active trigger
+C. if a table has an encrypted column
+D. if a table has a column of data type LONG defined on it
+E. if a table has a referential integrity constraint defined on it
+Answer: B,C,E
+Explanation:
+QUESTION NO: 201
+Your database instance is currently configured to support 1,500 connections. The Web application
+that uses the database allows a large number of users to work with the database simultaneously.
+Some users of the Web application do not interact with the server all the time. You want to
+increase the scalability by configuring the database instance to handle more connections. As a
+DBA, which configuration would you set to support more than 1,500 connections at a time?
+A. You would configure more listeners for the database.
+B. You would configure the database in shared server mode to use the connection pooling feature.
+C. You would increase the value of the PGA_AGGREGATE_TARGET initialization parameter that
+assigns more session memory to users.
+D. You would decrease the value of the PRIVATE_SGA resource limit in the profiles used by the
+users to accommodate more session information.
+Answer: B
+Explanation:
+QUESTION NO: 202
+Which two statements describe good practices for an application developer to reduce locking
+conflicts in Oracle database? (Choose two.)
+A. Avoid coding unnecessary longrunning transactions.
+B. Allow the database to handle locks in default locking mode.
+C. Always explicitly code the locks as per the requirement of the application.
+D. Allow escalation of row locks to block locks if too many row locks cause problem.
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 130
+Answer: A,B
+Explanation:
+QUESTION NO: 203
+These are points that describe the contents of different memory components:
+1: Descriptive information or metadata about schema objects that are queried by using SQL
+statements
+2: The runtime area for data manipulation language (DML) or data definition language (DDL)
+statements
+3: Results of SQL queries and PL/SQL functions
+4: Executable forms of SQL cursors, PL/SQL programs, and Java classes
+5: The information necessary to reconstruct changes made to the database by a transaction
+Which of these will be stored in the Shared Pool if the necessary configurations are done?
+A. 1 and 2
+B. 2 and 5
+C. 1,3, and 4
+D. 3,4 and 5
+E. 1,2,3 and 4
+Answer: C
+Explanation:
+QUESTION NO: 204
+View the Exhibit and note the files available in the $ORACLE_HOME/dbs folder. The ASM
+instance is already running. You used the following steps to start the database instance and open
+the database:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 131
+Which file is used to start the instance in this case?
+Exhibit:
+A. init.ora
+B. spfile.ora
+C. initorcl.ora
+D. spfile+ASM.ora
+Answer: B
+Explanation:
+QUESTION NO: 205
+Examine the commands executed in the following sequence:
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 132
+Which statement is true about the above commands?
+A. The commands execute successfully.
+B. Command 6 produces an error because of circular role grant.
+C. Command 5 produces an error because a role cannot be granted to another role.
+D. Command 3 produces an error because the MGRROLE role already contains system
+privileges. The table created by HR remains and HR still has the CREATE TABLE system
+privilege.
+E. The table created by HR remains and HR can grant the CREATE TABLE system privilege to
+other users.
+Answer: B
+Oracle 1z0-052 Exam
+"Pass Any Exam. Any Time." - www.actualtests.com 133
